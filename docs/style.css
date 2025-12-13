@@ -1,0 +1,132 @@
+/* ----- Fonts ----- */
+@font-face {
+  font-family: "Morandi";
+  src: local("Morandi Regular");
+}
+
+body {
+  margin: 0;
+  font-family: "Morandi", "Helvetica Neue", Arial, sans-serif;
+  background-color: #9BF2FF;
+  color: black;
+}
+
+header {
+  text-align: center;
+  padding: 30px 20px 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.8em;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-size: 1.1em;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+/* ----- Home layout ----- */
+.home-text {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.profile-photo {
+  float: right;
+  width: 150px;
+  margin: 0 0 20px 30px;
+  border-radius: 8px;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+/* ----- Blog tabs ----- */
+.blog-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.blog-tabs button {
+  background: none;
+  border: 1px solid black;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.blog-tabs button.active {
+  background: black;
+  color: #9BF2FF;
+}
+
+.blog-content {
+  display: none;
+}
+
+.blog-content.active {
+  display: block;
+}
+
+/* ----- CV styling ----- */
+.cv-section-title {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+
+.cv-hr {
+  border: none;
+  border-top: 1px solid black;
+  margin-bottom: 25px;
+}
+
+.cv-entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.cv-left {
+  width: 70%;
+}
+
+.cv-right {
+  width: 25%;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cv-degree {
+  color: blue;
+}
+
+.cv-left ul {
+  margin: 5px 0 0 18px;
+  padding: 0;
+}
+
+.cv-left li {
+  margin: 2px 0;
+}
+
+.cv-spacer {
+  height: 6px;
+}
