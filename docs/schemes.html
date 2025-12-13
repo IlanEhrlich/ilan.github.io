@@ -29,36 +29,26 @@
 <body>
 
 <h1>Intuition on Schemes</h1>
-<p><strong>Author:</strong> Ilan Ehrlich</p>
 <p><strong>Date:</strong> November 2025</p>
 
-<h2>Starter</h2>
+We always hear that schemes generalize varieties. But how exactly? And how to we reach this result? <br>
+  In this post we go through these questions and try to make schemes seem a little more familiar and less daunting. It will be based on <a href = "https://agag-gathmann.math.rptu.de/class/alggeom-2021/alggeom-2021.pdf">Gathmann's notes</a> for reference.
 
-<h3>Goal</h3>
+
 <div class="remark">
   <div class="remark-title">Observation:</div>
-  By remark 4.16,
+  By remark 4.16, we have a bijection
   <p>
   $$
   \frac{\{\text{affine varieties over $K$}\}}{\cong} \longleftrightarrow \frac{\{\text{finitely generated reduced $K$-algebra}\}}{\cong}, \quad
-  X \mapsto A(X),\quad X_R \mapsfrom R
+  X \mapsto A(X)
   $$
   </p>
 </div>
 
 <p>
-Given a field $K$, affine varieties correspond to finitely generated reduced $K$-algebras.
+Given a field $K$, affine varieties correspond to finitely generated reduced $K$-algebras. Therefore, it is very natural to approach a generalization of (affine) varieties be wanting to extend this bijection to all schemes.
 </p>
-
-<div class="definition">
-  <div class="definition-title">Goal 1:</div>
-  Generalize affine varieties and their morphisms to more general ringed spaces so the coordinate ring can be any ring $R$.
-</div>
-
-<div class="definition">
-  <div class="definition-title">Goal 2:</div>
-  Define the category of ringed spaces to match generalized affine varieties.
-</div>
 
 <h3>Idea</h3>
 <p>
