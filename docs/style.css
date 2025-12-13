@@ -40,6 +40,22 @@ nav a.active {
   border-bottom: 2px solid black;
 }
 
+nav button {
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 10px;
+  color: black;
+  font-weight: normal;      /* default non-active */
+  border-bottom: none;      /* default non-active */
+}
+
+nav button.active {
+  font-weight: bold;        /* make title bold */
+  border-bottom: 2px solid black; /* underline */
+}
+
 /* ----- Home layout ----- */
 .home-text {
   max-width: 1000px;
