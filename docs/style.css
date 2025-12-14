@@ -4,17 +4,6 @@
   src: local("Morandi Regular");
 }
 
-section {
-  display: none;
-  max-width: 1000px;
-  margin: auto;
-  padding: 30px;
-}
-
-section.active {
-  display: block;
-}
-
 body {
   margin: 0;
   font-family: "Morandi", "Helvetica Neue", Arial, sans-serif;
