@@ -6,12 +6,14 @@
 
 section {
   display: none;
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
 }
 
 section.active {
   display: block;
 }
-
 
 body {
   margin: 0;
