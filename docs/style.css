@@ -103,6 +103,18 @@ a {
   display: block;
 }
 
+section {
+  display: none;
+  max-width: 1000px;
+  margin: 40px auto;   /* ← THIS sets margins for every tab */
+  padding: 30px;
+}
+
+section.active {
+  display: block;
+}
+
+
 /* ----- CV styling ----- */
 .cv-section-title {
   font-size: 1.6em;
