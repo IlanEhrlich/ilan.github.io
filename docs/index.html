@@ -5,24 +5,46 @@
   <title>Ilan Ehrlich</title>
 
   <!-- MathJax -->
-  <script>
-    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
-  </script>
+<script>
+function showSection(sectionId, clickedButton) {
+  // Hide all sections
+  document.querySelectorAll("section").forEach(section => {
+    section.classList.remove("active");
+  });
+
+  // Remove active from all tabs
+  document.querySelectorAll(".main-tab").forEach(button => {
+    button.classList.remove("active");
+  });
+
+  // Show the selected section
+  document.getElementById(sectionId).classList.add("active");
+
+  // Highlight the clicked tab
+  clickedButton.classList.add("active");
+}
+</script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<section id="home" class="active">...</section>
+<section id="works">...</section>
+<section id="cv">...</section>
+<section id="blog">...</section>
+<section id="contact">...</section>
+
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header><h1>Ilan Ehrlich</h1></header>
 
-  
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="works.html">Works</a>
-    <a href="cv.html">CV</a>
-    <a href="blog.html">Math blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<nav>
+  <button class="main-tab active" onclick="showSection('home', this)">Home</button>
+  <button class="main-tab" onclick="showSection('works', this)">Works</button>
+  <button class="main-tab" onclick="showSection('cv', this)">CV</button>
+  <button class="main-tab" onclick="showSection('blog', this)">Math blog</button>
+  <button class="main-tab" onclick="showSection('contact', this)">Contact</button>
+</nav>
 
   <div class="home-text">
     <img src="IMG_6203.JPEG" alt="Your photo" class="profile-photo">
