@@ -44,16 +44,18 @@ nav button {
   background: none;
   border: none;
   font-size: 1.1em;
-  cursor: pointer;
   padding: 10px;
+  cursor: pointer;
   color: black;
-  font-weight: normal;      /* default non-active */
-  border-bottom: none;      /* default non-active */
+  font-weight: normal;
+  border-bottom: 2px solid transparent;
 }
 
 nav button.active {
-  font-weight: bold;        /* make title bold */
-  border-bottom: 2px solid black; /* underline */
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
 }
 
 /* ----- Home layout ----- */
