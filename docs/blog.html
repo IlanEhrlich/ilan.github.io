@@ -24,8 +24,7 @@
 
   <div class="blog-tabs">
     <button class="blog-tab active" onclick="showBlog('topic1')">Intuition about schemes</button>
-    <button class="blog-tab" onclick="showBlog('topic2')">Topic 2</button>
-    <button class="blog-tab" onclick="showBlog('topic3')">Topic 3</button>
+    <button class="blog-tab active" onclick="showBlog('topic2')">Moduli problems</button>
   </div>
 
 <div id="topic1" class="blog-content active">
@@ -33,13 +32,13 @@
           style="width:100%; height:1200px; border:none;">
   </iframe>
 </div>
-  <div id="topic2" class="blog-content">
-    <p>Another formula: $$ \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2} $$</p>
-  </div>
-  <div id="topic3" class="blog-content">
-    <p>Inline math: $a^2 + b^2 = c^2$</p>
-  </div>
 
+<div id="topic2" class="blog-content active">
+  <iframe src="moduli.html"
+          style="width:100%; height:1200px; border:none;">
+  </iframe>
+</div>
+  
   <script src="script.js"></script>
 </body>
 </html>
