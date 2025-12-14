@@ -1,208 +1,256 @@
-<article class="blog-post">
+<h2>Introduction</h2>
 
-  <h2>Introduction</h2>
+<p>
+We sometimes hear that schemes generalize varieties. But when seeing the construction
+of schemes, this may not be directly obvious. In this post, we explain how we get to
+this result and how one should therefore view schemes.
+</p>
 
-  <p>
-    We sometimes hear that schemes generalize varieties. But when seeing the
-    construction of schemes, this may not be directly obvious. In this post,
-    we explain how we get to this result and how one should therefore view schemes.
-  </p>
+<p>
+Let $K$ be an algebraically closed field. We will mostly base our study on Gathmann's
+notes and we will often refer to it.
+</p>
 
-  <p>
-    Let \( K \) be an algebraically closed field. We will mostly base our study
-    on Gathmann's notes and we will often refer to it.
-  </p>
+<h3>Goal</h3>
 
-  <h3>Goal</h3>
+<p>
+The key observation for the upcoming generalization is the following:
+</p>
 
-  <p>
-    The key observation for the upcoming generalization is the following:
-  </p>
+<p><strong>Observation.</strong> By remark 4.16, we have a bijection</p>
 
-  <p><strong>Observation.</strong> By remark 4.16, we have a bijection</p>
+$$
+\frac{\{\text{affine varieties over } K\}}{\cong}
+\longleftrightarrow
+\frac{\{\text{finitely generated reduced } K\text{-algebras}\}}{\cong}
+$$
 
-  \[
-    \frac{\{\text{affine varieties over } K\}}{\cong}
-    \longleftrightarrow
-    \frac{\{\text{finitely generated reduced } K\text{-algebras}\}}{\cong}
-  \]
-  \[
-    X \longmapsto A(X)
-  \]
+$$
+X \longmapsto A(X)
+$$
 
-  <p>
-    Given a field \( K \), affine varieties are the same as finitely generated
-    reduced \( K \)-algebras. It is thus very natural to leverage this
-    correspondence to generalize (affine) varieties: can we construct an object
-    that is in correspondence with rings in general, and that corresponds to
-    varieties in the particular case of finitely generated reduced
-    \( K \)-algebras?
-  </p>
+<p>
+Given a field $K$, affine varieties are the same as finitely generated reduced
+$K$-algebras. It is thus very natural to leverage this correspondence to generalize
+(affine) varieties: can we construct an object that is in correspondence with rings
+in general, and that corresponds to varieties in the particular case of finitely
+generated reduced $K$-algebras?
+</p>
 
-  <h3>Idea</h3>
+<h3>Idea</h3>
 
-  <p>
-    So how does this correspondence actually work?
-  </p>
+<p>
+So how does this correspondence actually work?
+</p>
 
-  <p>
-    Its core idea is: instead of looking at varieties as the set of its points,
-    let's view it as the set of its subvarieties.
-  </p>
+<p>
+Its core idea is: instead of looking at varieties as the set of its points, let us
+view it as the set of its subvarieties.
+</p>
 
-  <h2>Reformulations of affine varieties</h2>
+<h2>Reformulations of affine varieties</h2>
 
-  <p>
-    So let's try to reformulate our construction of affine varieties as ringed
-    spaces but with this new viewpoint on them.
-  </p>
+<p>
+So let us try to reformulate our construction of affine varieties as ringed spaces
+but with this new viewpoint on them.
+</p>
 
-  <h3>As sets</h3>
+<h3>As sets</h3>
 
-  <p>
-    As sets, we said that we will focus on the set
-  </p>
+<p>
+As sets, we said that we will focus on the set
+</p>
 
-  \[
-    X_{\mathrm{sch}} := \{ Y : Y \text{ affine irreducible subvariety of } X \}
-  \]
+$$
+X_{\mathrm{sch}}
+:= \{ Y : Y \text{ affine irreducible subvariety of } X \}
+$$
 
-  <p>
-    instead of just \( X \). One way to see this pass from one to the other is
-  </p>
+<p>
+instead of just $X$. One way to see this pass from one to the other is
+</p>
 
-  \[
-    X = \bigcup_{\substack{Y \text{ irreducible} \\ \text{affine s.v. of } X}} Y
-    \;\leadsto\;
-    \{ Y : Y \text{ irreducible affine s.v. of } X \}.
-  \]
+$$
+X
+=
+\bigcup_{\substack{Y \text{ irreducible} \\
+\text{affine s.v. of } X}} Y
+\;\leadsto\;
+\{ Y : Y \text{ irr. affine s.v. of } X \}.
+$$
 
-  <h3>As topological spaces</h3>
+<h3>As topological spaces</h3>
 
-  <p>
-    Now let's give this set a topology inspired by what we have done so far.
-  </p>
+<p>
+Now let us give this set a topology inspired by what we have done so far.
+</p>
 
-  <p>
-    In the case of affine varieties, a closed subset is one given by
-  </p>
+<p>
+In the case of affine varieties, a closed subset is one given by
+</p>
 
-  \[
-    C = \bigcup_{\substack{Y \subseteq C,\ \text{affine} \\
-    \text{irreducible}}} Y
-  \]
+$$
+C =
+\bigcup_{\substack{Y \subseteq C,\ \text{affine} \\
+\text{irreducible}}} Y
+$$
 
-  <p>
-    where \( C \) is affine. So mimicking \( \leadsto \), we can simply define
-    closed subsets of \( X_{\mathrm{sch}} \) as those of the form
-  </p>
+<p>
+where $C$ is affine. So mimicking the arrow above, we can simply define closed subsets
+of $X_{\mathrm{sch}}$ as those of the form
+</p>
 
-  \[
-    \{ Y : Y \subseteq Y_0,\ Y \text{ affine irreducible} \}
-  \]
+$$
+\{ Y : Y \subseteq Y_0,\ Y \text{ affine irreducible} \}
+$$
 
-  <p>
-    for \( Y_0 \) affine (not necessarily irreducible).
-  </p>
+<p>
+for $Y_0$ affine (not necessarily irreducible).
+</p>
 
-  <p>
-    We can show that this defines a topology.
-  </p>
+<p>
+We can show that this defines a topology.
+</p>
 
-  <h3>As ringed spaces</h3>
+<h3>As ringed spaces</h3>
 
-  <p>
-    Now we want to define a regular function on an open subset of
-    \( X_{\mathrm{sch}} \).
-  </p>
+<p>
+Now we want to define a regular function on an open subset of $X_{\mathrm{sch}}$.
+On $U \subseteq X$ open, a regular function is a local rational function on $U$
+satisfying
+</p>
 
-  <p>
-    On \( U \subseteq X \) open, a regular function is a "local" rational function
-    on \( U \) satisfying
-  </p>
+$$
+\forall x \in U\quad
+\exists f,g \in A(X),\ x \in U_x \subseteq U:
+\forall y \in U_x,\ f(y) \neq 0,\ 
+\varphi(y) = \frac{g(y)}{f(y)}.
+$$
 
-  \[
-    \forall x \in U\quad \exists f,g \in A(X),\ x \in U_x \subseteq U :
-    \forall y \in U_x,\ f(y) \neq 0,\ \varphi(y) = \frac{g(y)}{f(y)}.
-  \]
+<p>
+So now we want to define a regular function on some set of irreducible affine
+varieties of the form
+</p>
 
-  <p>
-    So now we want to define a regular function on some set of irreducible affine
-    varieties of the form
-  </p>
+$$
+U_0
+=
+\{ Y : Y \nsubseteq Y_0,\ Y \text{ irreducible affine} \}.
+$$
 
-  \[
-    U_0 = \{ Y : Y \nsubseteq Y_0,\ Y \text{ irreducible affine} \}.
-  \]
+<p>
+The most natural idea is to say that a function on a set of irreducible affine
+varieties is a set of functions on each irreducible affine variety. Therefore we
+will consider on $U_0$ objects of the form $(\varphi_Y)_{Y \in U_0}$.
+</p>
 
-  <p>
-    The most natural idea is to say that a function on a set of irreducible affine
-    varieties is a set of functions on each irreducible affine variety.
-    Therefore we will consider on \( U_0 \) objects of the form
-    \( (\varphi_Y)_{Y \in U_0} \).
-  </p>
+<p>
+But what is $\varphi_{Y'}$ exactly? ($Y'$ being a point that is not the base point
+called $Y$ but one in its neighborhood $U_Y$.) In analogy, it corresponds to
+$\varphi(y)$.
+</p>
 
-  <p>
-    But what is \( \varphi_{Y'} \) exactly? In analogy, it corresponds to
-    \( \varphi(y) \).
-  </p>
+<p>
+First, we know that it must be well-defined on the neighborhood of $x$, i.e.
+$f(y) \neq 0$ for all $y \in U_X$. The way to generalize this is either
+</p>
 
-  <p>
-    Evaluating a regular function at a point should be the same as looking at its
-    class in the stalk around that point. We have proven that the stalk at \( Y \)
-    is \( A(X)_{I(Y)} \).
-  </p>
+$$
+0 \notin f(Y')
+\quad \text{or} \quad
+f(Y') \neq \{0\}.
+$$
 
-  <p>
-    Thus we define
-  </p>
+<p>
+The first corresponds to defining $\varphi_{Y'}$ as a quotient of polynomials and the
+second as a rational function. The first seems more appropriate, but this is not the
+best conceptual way of seeing this.
+</p>
 
-  \[
-    \varphi_Y \in A(X)_{I(Y)}.
-  \]
+<p>
+Rather, note that evaluating a regular function at a point should be the same as
+looking at its class in the stalk around that point. Yet, we have proven in Lemma
+3.19 that the stalk is the local ring $A(X)_{I(x)}$, where $I(x)$ is the ideal of
+polynomials vanishing at $x$.
+</p>
 
-  <p>
-    We then have the definition: for all \( Y \in U \),
-  </p>
+<p>
+So the way to generalize this is, as in Exercise 3.23, to consider the evaluation of
+$\varphi$ at $Y$ (i.e. $\varphi_Y$) as an element of the stalk at $Y$, which we have
+proven to be equal to $A(X)_{I(Y)}$. The second option can be written as
+$f \notin I(Y)$, which is the exact generalization in light of our conclusions on
+stalks.
+</p>
 
-  \[
-    \exists f,g \in A(X),\ Y \in U_Y \subseteq U :
-    \forall Y' \in U_Y,\ f \notin I(Y'),\ 
-    \varphi_Y = \frac{g}{f} \in A(X)_{I(Y')}.
-  \]
+<p>
+So $\varphi_Y$ is a rational function on the open neighborhood around $Y$, i.e. a
+quotient of two polynomials, the denominator not completely vanishing on $Y$:
+</p>
 
-  <h3>Regular functions as functions</h3>
+$$
+\varphi_Y \in A(X)_{I(Y)}.
+$$
 
-  <p>
-    We may now use this to refine our perception of the elements of the ring as
-    functions.
-  </p>
+<p>
+We then have the definition: for all $Y \in U$,
+</p>
 
-  \[
-    \mathrm{Frac}(R/\mathfrak{p}) = R_{\mathfrak{p}}.
-  \]
+$$
+\exists f,g \in A(X),\ Y \in U_Y \subseteq U:
+\forall Y' \in U_Y,\ f \notin I(Y'),\
+\varphi_{Y'} = \frac{g}{f} \in A(X)_{I(Y')}.
+$$
 
-  <p>
-    By defining \( f(\mathfrak{p}) = \overline{f}/1 \in R_{\mathfrak{p}} \), we get
-    \( f(\mathfrak{p}) = 0 \iff f \in \mathfrak{p} \), hence
-  </p>
+<p><strong>Regular functions as functions.</strong></p>
 
-  \[
-    \{ \mathfrak{p} : f(\mathfrak{p}) = 0 \}
-    =
-    \{ \mathfrak{p} : f \in \mathfrak{p} \}
-    =
-    V(f).
-  \]
+<p>
+We may now use this to refine our perception of the elements of the ring as
+functions.
+</p>
 
-  <p>
-    Therefore with this definition of evaluation, we recover the Zariski
-    topology.
-  </p>
+<p>
+Note that
+</p>
 
-  <p>
-    Moreover, the sheaf we have defined is the sheafification of the presheaf of
-    rational functions, exactly as in the affine case.
-  </p>
+$$
+\mathrm{Frac}(R/\mathfrak{p}) = R_{\mathfrak{p}}.
+$$
 
-</article>
+<p>
+By defining $f(\mathfrak{p}) = \overline{f}/1 \in \mathrm{Frac}(R/\mathfrak{p}) =
+R_{\mathfrak{p}}$, we get
+</p>
+
+$$
+f(\mathfrak{p}) = 0 \iff f \in \mathfrak{p},
+$$
+
+<p>
+so
+</p>
+
+$$
+\{ \mathfrak{p} : f(\mathfrak{p}) = 0 \}
+=
+\{ \mathfrak{p} : f \in \mathfrak{p} \}
+=
+V(f).
+$$
+
+<p>
+This means the locus of $f$ as a newly defined function is equal to the locus of $f$
+as defined by the Zariski topology for schemes.
+</p>
+
+<p>
+Therefore, with this definition of the evaluation of $f$, we recover the Zariski
+topology we have defined as the topology of loci of polynomial functions. Only now,
+“functions” are elements of $R$.
+</p>
+
+<p>
+Moreover, the sheaf we have defined is the sheafification of the presheaf of rational
+functions when those functions are elements of $R$, exactly as in the affine case,
+when the sheaf of regular functions was the sheafification of the presheaf of
+rational polynomials.
+</p>
