@@ -154,4 +154,5 @@ a {
   height: 1200px;
   border: none;
   display: block;
+  overflow: hidden;
 }
