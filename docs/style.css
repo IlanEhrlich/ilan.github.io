@@ -4,6 +4,15 @@
   src: local("Morandi Regular");
 }
 
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+
 body {
   margin: 0;
   font-family: "Morandi", "Helvetica Neue", Arial, sans-serif;
