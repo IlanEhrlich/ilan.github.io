@@ -4,26 +4,7 @@
   <meta charset="UTF-8">
   <title>Ilan Ehrlich</title>
 
-  <!-- MathJax -->
-
-<script>
-  function showSection(id) {
-    document.querySelectorAll("section")
-      .forEach(s => s.classList.remove("active"));
-
-    document.querySelectorAll(".main-tab")
-      .forEach(b => b.classList.remove("active"));
-
-    document.getElementById(id).classList.add("active");
-    event.target.classList.add("active");
-
-    if (window.MathJax) {
-      MathJax.typesetPromise();
-    }
-  }
-</script>
-
-  
+  <!-- MathJax -->  
   <script>
     window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
     }
