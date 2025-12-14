@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intuition about schemes</title>
+
+  <!-- MathJax configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>The formalism of moduli functors</h2>
+<p>
+The first time we encounter moduli spaces, they are said to be spaces whose points are in bijection with isomorphism classes of a given structure. We often give the example of projective space, or elliptic curves. However the rigorous formalism is the following definition using category theory.
+</p>
+<p>
+A contravariant functor $F: \mathrm{Sch} \to \mathrm{Sets}$ is called a <em>moduli problem</em>. This is very flexible and allows classifying a wide variety of objects. For example, in the case of elliptic curves (over an arbitrary scheme), the moduli functor associates to a scheme $S$ the set of isomorphism classes of $S$-elliptic curves.
+</p>
+<p>
+A <em>fine moduli space</em> for a moduli problem $F$ is then simply a scheme $M$ representing $F$.
+</p>
+
+<h3>Explanation of the generalization</h3>
+<h4>Fine moduli space</h4>
+<p>
+If $M$ is a fine moduli space for $F$, it means that $F$ is representable by $M$, i.e. there exists a natural isomorphism 
+$$
+\tau: F \xrightarrow{\simeq} h^M, \quad \text{where } h^M = \mathrm{Hom}_{\mathrm{Sch}}(-,M).
+$$
+</p>
+
+<blockquote>
+<p>
+In <em>Advanced topics in the arithmetic of elliptic curves</em> by Joseph H. Silverman, chapter IV, example 2.1.1, the author explains the intuition behind $h^M(S)=\mathrm{Hom}_{\mathrm{Sch}}(S,M)$ as the $S$-points on $M$, noted $M(S)$:
+</p>
+<p>
+Let $K$ be a field, $S = \mathrm{Spec}\,K$ and let $X/K$ be an affine scheme, given by equations $f_1 = \dots = f_r = 0$. Then
+$$
+X(S) = \{\text{K-morphisms } \mathrm{Spec}\,K \to X \} 
+\cong \{ K\text{-algebra homomorphisms } K[x_1,\dots,x_n]/(f_1,\dots,f_r) \to K \} 
+= \{ P \in K^n : f_1(P) = \dots = f_r(P) = 0 \}.
+$$
+Thus $X(S)$ agrees with the usual notion of $X(K)$.
+</p>
+</blockquote>
+
+<p>
+Recall the Yoneda lemma:
+$$
+\mathrm{Nat}(h^M, F) \cong F(M),
+$$
+where the map from the RHS to the LHS is given by $U \mapsto \tau_U$, and for all $S \in \mathrm{Sch}$, $(\tau_U)_S: h^M(S) \to F(S)$ is defined by $f \mapsto F(f)(U)$.
+</p>
+
+<p>
+A natural transformation is a natural isomorphism if and only if it is invertible for every object. Therefore:
+$$
+h^M \cong F \iff \exists \tau \in \mathrm{Nat}(h^M,F): \forall S \in \mathrm{Sch}, \tau_S \text{ is invertible} \iff \exists U \in F(M): \forall S, (\tau_U)_S \text{ is invertible}.
+$$
+Hence $M$ is a fine moduli space for $F$ if and only if there exists a <em>universal object</em> $U \in F(M)$ such that for all schemes $S$:
+$$
+M(S) \to F(S), \quad f \mapsto F(f)(U)
+$$
+is a natural bijection.
+</p>
+
+<div class="adjustwidth">
+<p>
+Let $F:\mathrm{Sch} \to \mathrm{Sets}$ be a contravariant functor that acts on morphisms by pullbacks. Then a scheme $M$ is a fine moduli space for $F$ if and only if there exists an object $U \in F(M)$ such that for any scheme $S$ and any $V \in F(S)$, there exists a unique $f: S \to M$ such that
+$$
+V = U \times_f S,
+$$
+giving in particular the bijection $M(S) \cong F(S)$.
+</p>
+</div>
+
+<h2>Base change of the fine moduli space</h2>
+<p>
+The fine moduli space is powerful because it generates all objects over all schemes just by pullbacks along its points. Often, however, we are only interested in schemes over a given base scheme $X$, for example $\mathbb{C}$. 
+</p>
+
+<p>
+Assume $M$ is a fine moduli space for $F$ over a fixed scheme $X$, with additional properties $P$, e.g., being a curve over $X$. For an $X$-scheme $Y$, we would like a scheme $M_Y$ over $Y$ with property $P$ such that it "does the same." 
+</p>
+
+<p>
+Formally, let $F_X := F|_{\mathrm{Sch}_X}$. Assume $M_X \in \mathrm{Sch}_X$ is a fine moduli space for $F_X$ instead of $F$. Then for all $S \in \mathrm{Sch}_X$:
+$$
+\mathrm{Hom}_X(S,M_X) \cong F_X(S) \quad \text{naturally}.
+$$
+</p>
+
+<h3>Proposition</h3>
+<p>
+The space $M_Y := Y \times_X M_X$ is a fine moduli space for the functor $F_Y$.
+</p>
+
+<h4>Proof</h4>
+<p>
+Let $S \in \mathrm{Sch}_Y$. As sets, $F_X(S) = F_Y(S)$. Moreover, $F_X(S) \cong \mathrm{Hom}_X(S, M_X)$. We have a bijection $\mathrm{Hom}_X(S, M_X) \cong \mathrm{Hom}_Y(S, M_Y)$ via the universal property of fiber products. 
+</p>
+
+<p>
+Given $f \in \mathrm{Hom}_X(S,M_X)$, it uniquely defines $\overline{f} \in \mathrm{Hom}_Y(S, M_Y)$ making the diagram commute. Conversely, any morphism in $\mathrm{Hom}_Y(S, M_Y)$ recovers one in $\mathrm{Hom}_X(S, M_X)$. Naturality follows from composition with morphisms $\alpha \in \mathrm{Hom}_Y(S, S')$.
+</p>
+
+<p>
+Hence, we get a natural bijection
+$$
+F_Y(S) = F_X(S) \cong \mathrm{Hom}_X(S, M_X) \cong \mathrm{Hom}_Y(S, M_Y),
+$$
+as required.
+</p>
+
+</body>
+</html>
