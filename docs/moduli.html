@@ -93,23 +93,22 @@ naturally.
     Now, we can see that we have a bijection $\hom_X(S,M_X) \cong \hom_Y(S,M_Y)$. Indeed, any $f\in \hom_X(S,M_X)$ makes by definition the diagram <br>
 
 <!-- https://q.uiver.app/#q=WzAsNCxbMSwyLCJZIl0sWzIsMiwiWCJdLFsyLDEsIk1fWCJdLFswLDAsIlMiXSxbMCwxXSxbMiwxXSxbMywyLCJmIiwwLHsiY3VydmUiOi0yfV0sWzMsMCwiIiwwLHsiY3VydmUiOjJ9XV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMSwyLCJZIl0sWzIsMiwiWCJdLFsyLDEsIk1fWCJdLFswLDAsIlMiXSxbMCwxXSxbMiwxXSxbMywyLCJmIiwwLHsiY3VydmUiOi0yfV0sWzMsMCwiIiwwLHsiY3VydmUiOjJ9XV0=&embed" width="432" height="432" style="border-radius: 8px; border: none;"></iframe>
-  
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMSwyLCJZIl0sWzIsMiwiWCJdLFsyLDEsIk1fWCJdLFswLDAsIlMiXSxbMCwxXSxbMiwxXSxbMywyLCJmIiwwLHsiY3VydmUiOi0yfV0sWzMsMCwiIiwwLHsiY3VydmUiOjJ9XV0=&embed" width="200" height="200" style="border-radius: 8px; border: none;"></iframe>
+  <br>
 commute. Hence, it yields a unique morphism $\overline{f}\in \hom_Y(S,M_Y)$ making the whole diagram commute: <br>
 <!-- https://q.uiver.app/#q=WzAsNSxbMSwyLCJZIl0sWzIsMiwiWCJdLFsyLDEsIk1fWCJdLFswLDAsIlMiXSxbMSwxLCJNX1kiXSxbMCwxXSxbMiwxXSxbMywyLCJmIiwwLHsiY3VydmUiOi0yfV0sWzMsMCwiIiwwLHsiY3VydmUiOjJ9XSxbNCwyXSxbNCwwXSxbMyw0LCJcXG92ZXJsaW5le2Z9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMSwyLCJZIl0sWzIsMiwiWCJdLFsyLDEsIk1fWCJdLFswLDAsIlMiXSxbMSwxLCJNX1kiXSxbMCwxXSxbMiwxXSxbMywyLCJmIiwwLHsiY3VydmUiOi0yfV0sWzMsMCwiIiwwLHsiY3VydmUiOjJ9XSxbNCwyXSxbNCwwXSxbMyw0LCJcXG92ZXJsaW5le2Z9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d&embed" width="432" height="432" style="border-radius: 8px; border: none;"></iframe>
-
-
-Conversely, given a morphsim in $\hom_Y(S,M_Y)$, postcomposing with the map $M_Y\to M_X$ recovers one in $\hom_X(S,M_X)$.
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMSwyLCJZIl0sWzIsMiwiWCJdLFsyLDEsIk1fWCJdLFswLDAsIlMiXSxbMSwxLCJNX1kiXSxbMCwxXSxbMiwxXSxbMywyLCJmIiwwLHsiY3VydmUiOi0yfV0sWzMsMCwiIiwwLHsiY3VydmUiOjJ9XSxbNCwyXSxbNCwwXSxbMyw0LCJcXG92ZXJsaW5le2Z9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d&embed" width="200" height="200" style="border-radius: 8px; border: none;"></iframe>
+<br>
+  Conversely, given a morphsim in $\hom_Y(S,M_Y)$, postcomposing with the map $M_Y\to M_X$ recovers one in $\hom_X(S,M_X)$.
 This then defines a bijection, but does not guarantee that this bijection is natural. For this, assume we have a morphism $\alpha\in \hom_Y(S,S')$. We'd like to make sure that the definition we have just defined makes the diagram <br>
 <!-- https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGhvbV9YKFMsTV9YKSJdLFswLDEsIlxcaG9tX1goUycsTV9YKSJdLFsxLDAsIlxcaG9tX1koUyxNX1kpIl0sWzEsMSwiXFxob21fWShTJyxNX1kpIl0sWzAsMl0sWzEsMF0sWzMsMl0sWzEsM11d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGhvbV9YKFMsTV9YKSJdLFswLDEsIlxcaG9tX1goUycsTV9YKSJdLFsxLDAsIlxcaG9tX1koUyxNX1kpIl0sWzEsMSwiXFxob21fWShTJyxNX1kpIl0sWzAsMl0sWzEsMF0sWzMsMl0sWzEsM11d&embed" width="572" height="304" style="border-radius: 8px; border: none;"></iframe>
-
-commute. Let $f\in \hom_X(S',M_X)$. Then the lower path sends $f$ to $\overline{f}\circ \alpha$, whereas the upper one sends it to $\overline{f\circ \alpha}$. In order to check that the two are equal, it is enough to show that $\overline{f}\circ \alpha$ satisfies the property of $\overline{f\circ \alpha}$, i.e. check that in the diagram <br>
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGhvbV9YKFMsTV9YKSJdLFswLDEsIlxcaG9tX1goUycsTV9YKSJdLFsxLDAsIlxcaG9tX1koUyxNX1kpIl0sWzEsMSwiXFxob21fWShTJyxNX1kpIl0sWzAsMl0sWzEsMF0sWzMsMl0sWzEsM11d&embed" width="350" height="200" style="border-radius: 8px; border: none;"></iframe>
+  <br>
+  commute. Let $f\in \hom_X(S',M_X)$. Then the lower path sends $f$ to $\overline{f}\circ \alpha$, whereas the upper one sends it to $\overline{f\circ \alpha}$. In order to check that the two are equal, it is enough to show that $\overline{f}\circ \alpha$ satisfies the property of $\overline{f\circ \alpha}$, i.e. check that in the diagram <br>
 <!-- https://q.uiver.app/#q=WzAsNixbMiwyLCJNX1kiXSxbMywyLCJNX1giXSxbMiwzLCJZIl0sWzMsMywiWCJdLFsxLDEsIlMnIl0sWzAsMCwiUyJdLFswLDFdLFswLDJdLFsyLDNdLFsxLDNdLFs0LDAsIlxcb3ZlcmxpbmV7Zn0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw0LCJcXGFscGhhIiwxXSxbNCwxLCJmIiwxLHsiY3VydmUiOi0xfV0sWzUsMSwiZlxcY2lyYyBcXGFscGhhIiwxLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6LTJ9XSxbNSwwLCJcXG92ZXJsaW5le2ZcXGNpcmMgXFxhbHBoYX0iLDEseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDIsIiIsMSx7ImN1cnZlIjoxfV0sWzUsMiwiIiwxLHsiY3VydmUiOjJ9XV0= -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMiwyLCJNX1kiXSxbMywyLCJNX1giXSxbMiwzLCJZIl0sWzMsMywiWCJdLFsxLDEsIlMnIl0sWzAsMCwiUyJdLFswLDFdLFswLDJdLFsyLDNdLFsxLDNdLFs0LDAsIlxcb3ZlcmxpbmV7Zn0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw0LCJcXGFscGhhIiwxXSxbNCwxLCJmIiwxLHsiY3VydmUiOi0xfV0sWzUsMSwiZlxcY2lyYyBcXGFscGhhIiwxLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6LTJ9XSxbNSwwLCJcXG92ZXJsaW5le2ZcXGNpcmMgXFxhbHBoYX0iLDEseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDIsIiIsMSx7ImN1cnZlIjoxfV0sWzUsMiwiIiwxLHsiY3VydmUiOjJ9XV0=&embed" width="560" height="560" style="border-radius: 8px; border: none;"></iframe>
-commutes. Name $\epsilon:M_Y\to M_X$, then we have
-$$\epsilon \circ (\overline{f}\circ \alpha) =(\epsilon \circ \overline{f})\circ \alpha  = f \circ \alpha.$$
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMiwyLCJNX1kiXSxbMywyLCJNX1giXSxbMiwzLCJZIl0sWzMsMywiWCJdLFsxLDEsIlMnIl0sWzAsMCwiUyJdLFswLDFdLFswLDJdLFsyLDNdLFsxLDNdLFs0LDAsIlxcb3ZlcmxpbmV7Zn0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw0LCJcXGFscGhhIiwxXSxbNCwxLCJmIiwxLHsiY3VydmUiOi0xfV0sWzUsMSwiZlxcY2lyYyBcXGFscGhhIiwxLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6LTJ9XSxbNSwwLCJcXG92ZXJsaW5le2ZcXGNpcmMgXFxhbHBoYX0iLDEseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDIsIiIsMSx7ImN1cnZlIjoxfV0sWzUsMiwiIiwxLHsiY3VydmUiOjJ9XV0=&embed" width="200" height="200" style="border-radius: 8px; border: none;"></iframe>commutes. Name $\epsilon:M_Y\to M_X$, then we have
+<br>
+  $$\epsilon \circ (\overline{f}\circ \alpha) =(\epsilon \circ \overline{f})\circ \alpha  = f \circ \alpha.$$
 which suffices. This proves that $\hom_X(S,M_X)\cong \hom_Y(S,M_Y)$ naturally.
 We then have the composition of natural bijections
 $$
