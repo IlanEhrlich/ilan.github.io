@@ -27,7 +27,7 @@ So let's try to reformulate our construction of affine varieties as ringed space
 <h3>As sets</h3>
 As sets, we said that we will focus on the set
 $$
-X_\sch:=\{Y: Y \text{ affine irreducible subvariety of }X\}
+X_\mathrm{Sch}:=\{Y: Y \text{ affine irreducible subvariety of }X\}
 $$
 instead of just $X$. One way to see this pass from one to the other is 
 $$
@@ -41,7 +41,7 @@ $$
 C= \bigcup_{\substack{Y\subseteq C,\text{ affine}\\
 \text{ irreducible}}} Y
 $$
-where $C$ is affine. So mimicking $\mathrel{\leadsto}$, we can simply define closed subsets of $X_\sch$ as those of the form
+where $C$ is affine. So mimicking $\mathrel{\leadsto}$, we can simply define closed subsets of $X_\mathrm{Sch}$ as those of the form
 $$
 \{Y: Y\subseteq Y_0, Y\text{ affine irreducible}\}
 $$
@@ -50,7 +50,7 @@ for $Y_0$ affine (not necessarily irreducible).
 We can show that this defines a topology.
 
 <h3>As ringed spaces</h3>
-Now we want to define a regular function on an open subset of $X_\sch$. On $U\subseteq X$ open, a regular function is a "local" rational function on $U$ satisfying
+Now we want to define a regular function on an open subset of $X_\mathrm{Sch}$. On $U\subseteq X$ open, a regular function is a "local" rational function on $U$ satisfying
 $$
 \forall x\in U\quad \exists f,g\in A(X), x\in U_x\subseteq U: \forall y\in U_x, f(y) \neq 0, \varphi(y) = \frac{g(y)}{f(y)}.
 $$
@@ -74,10 +74,10 @@ $$
 We may now use this to refine our perception of the elements of the ring as functions.
 
 Note that
-$$\mathrm{Frac}R/\p=R_\p.$$ By defining $f(\p)=\overline{f}/1\in \mathrm{Frac}R/\p=R_\p$, we get
-$f(\p)=0\iff f\in \p$, so
+$$\mathrm{Frac}R/\mathfrak{p}=R_\mathfrak{p}.$$ By defining $f(\mathfrak{p})=\overline{f}/1\in \mathrm{Frac}R/\mathfrak{p}=R_\mathfrak{p}$, we get
+$f(\mathfrak{p})=0\iff f\in \mathfrak{p}$, so
 $$
-\{\p:f(\p)=0\}=\{\p:f\in \p\} = V(f)
+\{\mathfrak{p}:f(\mathfrak{p})=0\}=\{\mathfrak{p}:f\in \mathfrak{p}\} = V(f)
 $$
 meaning the locus of $f$ as a newly defined function is equal to the "locus" of $f$ as defined by the Zariski topology for schemes.
 
@@ -85,21 +85,20 @@ Therefore with this definition of the evaluation of $f$, we recover the Zariski 
 
 Moreover, the sheaf we have defined is the sheafification of the presheaf of rational functions when those functions are elements in $R$, exactly as in the affine case, when the sheaf of regular functions was the sheafification of the presheaf of rational polynomials.
 <h2>Schemes</h2>
-We can now introduce schemes. We just have to consider $X_\sch$ as the set of prime ideals of $A(X)$ and rewrite our construction in terms of it:
+We can now introduce schemes. We just have to consider $X_\mathrm{Sch}$ as the set of prime ideals of $A(X)$ and rewrite our construction in terms of it:
 $$
-X_\sch:=\{\p: \p \text{ prime ideal of }A(X)\}=\Spec A(X).
+X_\mathrm{Sch}:=\{\mathfrak{p}: \mathfrak{p} \text{ prime ideal of }A(X)\}=\mathrm{Spec} A(X).
 $$
 None of what we have done actually relies on $X$ as an affine variety, everything we have done can be written with $R$ any ring instead of $A(X)$.
 
-Let $R$ be a ring. We consider the space $\Spec(R)$. We endow it with the new Zariski topology we have just defined. Explicitly, this yields closed sets of the form 
+Let $R$ be a ring. We consider the space $\mathrm{Spec}(R)$. We endow it with the new Zariski topology we have just defined. Explicitly, this yields closed sets of the form 
 $$
-V(I) = \{\p: I\subseteq \p\}
+V(I) = \{\mathfrak{p}: I\subseteq \mathfrak{p}\}
 $$
-and sections of the form $$\Or_{\Spec R}(U)
-= \{(\varphi_\p)_{\p\in U}: \forall \p\in U\exists f,g\in R,  \p \in U_\p\subseteq U\mathrm{ s.t. }\forall \mathfrak{q}\in U_\p, f\notin\mathfrak{q}, \varphi_\mathfrak{q}=\frac{g}{f}\in R_\mathfrak{q}\}.
+and sections of the form $$\Or_{\mathrm{Spec} R}(U)
+= \{(\varphi_\mathfrak{p})_{\mathfrak{p}\in U}: \forall \mathfrak{p}\in U\exists f,g\in R,  \mathfrak{p} \in U_\mathfrak{p}\subseteq U\mathrm{ s.t. }\forall \mathfrak{q}\in U_\mathfrak{p}, f\notin\mathfrak{q}, \varphi_\mathfrak{q}=\frac{g}{f}\in R_\mathfrak{q}\}.
 $$
-\begin{definition}An affine scheme is a ringed space of the form $\Spec R$ with the sheaf we have just defined
-\end{definition}
+<h3>definition</h3>An affine scheme is a ringed space of the form $\mathrm{Spec} R$ with the sheaf we have just defined
 
 <h3>Being defined over some other field</h3>
 
@@ -137,26 +136,27 @@ A_K(X) = A_{K'}(X_0)\otimes_{K'} K.
 $$
 <br> <br>
 In terms of schemes, this is the same as saying that
-$$  \Spec A_K(X) = \Spec A_{K'}(X_0) \times_{\Spec {K'}} \Spec K.
+$$  \mathrm{Spec} A_K(X) = \mathrm{Spec} A_{K'}(X_0) \times_{\mathrm{Spec} {K'}} \mathrm{Spec} K.
 $$
 Then we can generalize this to the following definition. 
 <br> <br>
 Let $S$ be a scheme over $K$ (finite?). Then we say that $S$ originates from a scheme over $K'$ if there exists a scheme $T$ over $K'$ such that
 $$
-S=T\times_{\Spec {K'}} \Spec K.
+S=T\times_{\mathrm{Spec} {K'}} \mathrm{Spec} K.
 $$
 <br> <br>
 We can even easily generalize this even further. If $S$ is a scheme over $U$ and $U$ is a scheme over $U'$, then $S$ originates from a scheme over $U'$ if there exists a scheme $T$ over $U'$ such that 
 $$
 S=T\times_{U'}U.
 $$
-In terms of diagrams, this means that there exists a morphism $S\to T$ such that the diagram
+In terms of diagrams, this means that there exists a morphism $S\to T$ such that the diagram <br>
 <!-- https://q.uiver.app/#q=WzAsNCxbMCwwLCJTIl0sWzEsMCwiVCJdLFswLDEsIlUiXSxbMSwxLCJVJyJdLFsxLDNdLFswLDJdLFswLDFdLFsyLDNdXQ== -->
 <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJTIl0sWzEsMCwiVCJdLFswLDEsIlUiXSxbMSwxLCJVJyJdLFsxLDNdLFswLDJdLFswLDFdLFsyLDNdXQ==&embed" width="200" height="200" style="border-radius: 8px; border: none;"></iframe>
-is cocartesian.
+<br>
+    is cocartesian.
 Hence, we will say for example that an elliptic curve $E$ over a field $K$ originates from a scheme over $\Z$ if there exists a scheme $T$ (automatically over $\Z$) such that
 $$
-\Spec K[E] = T\times_{\Spec \Z} \Spec K
+\mathrm{Spec} K[E] = T\times_{\mathrm{Spec} \Z} \mathrm{Spec} K
 $$
 where $K[E]$ is just Silverman's notation for the coordinate ring.
 
