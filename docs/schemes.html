@@ -21,7 +21,26 @@
 </head>
 
 <body>
+
   <div class="home-text">
+
+We sometimes hear that schemes generalize varieties. But when seeing the construction of schemes, this may not be directly obvious. In this post, we explain how we get to this result and how one should therefore view schemes.
+Let $K$ be an algebraically closed field. We will mostly base our study on <a href="https://agag-gathmann.math.rptu.de/class/alggeom-2002/alggeom-2002.pdf">Gathmann's notes</a> and we will often refer to it.
+<h2>Introduction</h2>
+    <h3>Goal</h3>
+The key observation for the upcoming generalization is the following:
+
+<h4>Observation</h4> By remark 4.16, we have a bijection
+\begin{align*}
+    \frac{\{\text{affine varietes over $K$}\}}{\cong} &\longleftrightarrow \frac{\{\text{finitely generated reduced $K$-algebra}\}}{\cong} \\
+    X &\mapsto A(X) 
+\end{align*}
+Given a field $K$, affine varieties are the same as finitely generated reduced $K$-algebras. It is thus very natural to leverage this correspondence to generalize (affine) varieties: can we construct an object that is in correspondence with rings in general, and that corresponds to varieties in the particular case of finitely generated reduced $K$-algebras?
+<h3>Idea</h3>
+So how does this correspondence actually work?
+
+Its core idea is: instead of looking at varieties as the set of its points, let's view it as the set of its subvarieties.
+  
 <h2>Reformulations of affine varieties</h2>
 So let's try to reformulate our construction of affine varieties as ringed spaces but with this new viewpoint on them.
 <h3>As sets</h3>
