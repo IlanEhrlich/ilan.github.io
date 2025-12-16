@@ -26,19 +26,19 @@ Let $E,E'$ be elliptic curves. An important question to ask, for instance in cry
 <p>
 	Does their exist <em>any</em> isogeny of given degree $l$ between $E$ and $E'$?
 </p>
-In another post, we have classified $l$-isogenies. Our question is to determine, more coarsely, whether such an isogeny exists, abstracting away from its precise isomorphism class; we want to forget this data and are only interested in pairs of isomorphism classes of elliptic curves connected by an
+In another post, we have classified $l$-isogenies. Our question is to determine, more coarsely, whether such an isogeny exists, ignoring its precise isomorphism class; we want to forget this data and are only interested in pairs of isomorphism classes of elliptic curves connected by an
 $l$-isogeny. In other words, we wish to retain only the data of the domains and codomains of our 
 $l$-isogenies. We can formulate this mathematically as follows.
-We have two covariant functors $$\mathrm{Dom}, \mathrm{Cod}:l-\mathrm{Isogenies} \to \mathrm{Elliptic curves}$$ of domain and codomain. These induce two maps on the moduli spaces <br>
+We have two covariant functors $$\mathrm{Dom}, \mathrm{Cod}:l-\mathrm{Isogenies} \to \mathrm{Elliptic} \; \mathrm{curves}$$ of domain and codomain. These induce two maps on the moduli spaces <br>
 <!-- https://q.uiver.app/#q=WzAsMyxbMSwwLCJZXzAobCkiXSxbMCwxLCJZKDEpIl0sWzIsMSwiWSgxKSJdLFswLDEsInxcXG1hdGhybXtEb219fCIsMl0sWzAsMiwifFxcbWF0aHJte0NvZH18Il1d -->
 <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMyxbMSwwLCJZXzAobCkiXSxbMCwxLCJZKDEpIl0sWzIsMSwiWSgxKSJdLFswLDEsInxcXG1hdGhybXtEb219fCIsMl0sWzAsMiwifFxcbWF0aHJte0NvZH18Il1d&embed" width="435" height="304" style="border-radius: 8px; border: none;"></iframe>
 <br>
 	and thus a map
-$$\pi^0_l: Y_0(l)\to Y(1) \times Y(1).$$
-Thus, the object that interests us is the image $\pi_l^0(Y_0(l))$; this parametrizes pairs of isomorphism classes of elliptic curves connected by an $l$-isogeny.
+$$\pi_l: Y_0(l)\to Y(1) \times Y(1).$$
+Thus, the object that interests us is the image $\pi_l(Y_0(l))$; this parametrizes pairs of isomorphism classes of elliptic curves connected by an $l$-isogeny.
 
-We can go further in this description. Using the $j$-invariant, $j:Y(1)\xrightarrow[]{\sim} \mathbb{C}$ we can consider the image in $\mathbb{C}\times\mathbb{C}$. The following result gives a more precise description of our object of interest. According to Chow's theorem, the space $(j\times j)\circ \pi_l^0(Y_0(l))$ is an affine subvariety of $\mathbb{C}\times \mathbb{C}$.
-Thus, to understand $\pi_l^0(Y_0(l))$, we can simply find the polynomials whose vanishing locus is $(j\times j)\circ \pi_l^0(Y_0(l))$.
+We can go further in this description. Using the $j$-invariant, $j:Y(1)\xrightarrow[]{\sim} \mathbb{A}^1_\mathbb{C}$ we can consider the image in $\mathbb{A}^1_\mathbb{C}\times\mathbb{A}^1_\mathbb{C}$. The following result gives a more precise description of our object of interest. According to Chow's theorem, the space $(j\times j)\circ \pi_l(Y_0(l))$ is an affine subvariety of $\mathbb{A}^1_\mathbb{C}\times \mathbb{A}^1_\mathbb{C}$.
+Thus, to understand $\pi_l(Y_0(l))$, we can simply find the polynomials whose vanishing locus is $(j\times j)\circ \pi_l(Y_0(l))$.
 
 
 Let us try to calculate this locus. We denote $[\cdot]$ the classes in $Y(1)$ and $\overline{\cdot}$ those in $Y_0(l)$. We have
@@ -94,7 +94,6 @@ In order to prove this, we will need an explicit set of representatives of the c
     $$
     are exactly the right cosets of $\Gamma(1)/\Gamma_0(l)$. In particular, $(\sigma_0^{-1}\Gamma(1)\sigma_0)\cap \Gamma(1)=\Gamma(1)$.
 <br> <br>
-How do we get here and what is its relationship with the form of level structures?
 This classification is of particular interest, because it also gives us a very explicit formula for the expression $j(l\gamma_i\tau)$. Write $j_l$ for the function $j(l\tau)$.
 
 We can enumerate the elements of $C(m)$ so that $\gamma_i$ belongs exactly to the right coset given by $\sigma_i$. Notice that multiplying by $l$ is the same as applying $\sigma_0$, so in our case $l\gamma_i\tau = \sigma_0\gamma_i\tau$. Moreover, there exists $\hat{\gamma}_i\in \Gamma(1)$ such that $\sigma_0\gamma_i= \hat{\gamma}_i\sigma$, so $l\gamma_i\tau = \hat{\gamma}_i\sigma\tau$. In particular, since $j$ is $\Gamma(1)$-invariant,
@@ -119,7 +118,7 @@ Let $J_\tau:=\{j_l(\gamma_1\tau),\dots,j_l(\gamma_k\tau)\}$.
     Here we give the proof of theorem 11.9 in Cox for clarity of the construction.
 
     It appears clearly that those coefficients are symmetric polynomials in the elements of $J_\tau$. 
-    Therefore, it suffices to show that any symmetric polynomial in these elements is a polynomial in $j(\tau)$. Let $S\in \mathbb{C}[x_1,\dots,x_k]$ (not using the free hypothesis that the coefficients are actually integers?) be a symmetric polynomial. By the first part of Proposition 2, it suffices to show that $S(J_\tau)$ is a holomorphic modular function for $\Gamma(1)$. 
+    Therefore, it suffices to show that any symmetric polynomial in these elements is a polynomial in $j(\tau)$. Let $S\in \mathbb{C}[x_1,\dots,x_k]$ be a symmetric polynomial. By the first part of Proposition 2, it suffices to show that $S(J_\tau)$ is a holomorphic modular function for $\Gamma(1)$. 
 
     Let us show weak modularity. Since the $\gamma_i$'s are representatives of the cosets, for any $\gamma\in \Gamma(1)$ there exists a bijection $\alpha$ of $\{1,\dots,k\}$ to itself such that for any $i$ there exists $\gamma_i'\in \Gamma_0(l)$ such that $\gamma_i\gamma = \gamma_i'\gamma_{\alpha(i)}$. A simple calculation shows that $j_l(\tau)$ is $\Gamma_0(l)$-invariant. Indeed, for any $\hat{\gamma}\in \Gamma_0(l)$, $\phi_{\hat{\gamma}\tau}\cong \phi_\tau$, and in particular $ E_{l\hat{\gamma}\tau}\cong E_{l\tau}$, meaning that $j(l\hat{\gamma}\tau)=j(l\tau)$. Therefore $j_l(\gamma_i\gamma) = j_l(\gamma_i'\gamma_{\alpha(i)}) = j_l(\gamma_{\alpha(i)})$, and 
     $$
@@ -138,7 +137,7 @@ $$
 We call $\Phi_l$ the \textit{classical modular polynomial} of degree $l$.
 Hence, coming back to our computations:
 $$
-    (j\times j)\circ \pi_l^0(Y_0(l)) =  \bigcup_{\tau\in Y(1)} \{j(\tau)\}\times V(\Phi_l(j(\tau),y)) 
+    (j\times j)\circ \pi_l(Y_0(l)) =  \bigcup_{\tau\in Y(1)} \{j(\tau)\}\times V(\Phi_l(j(\tau),y)) 
 $$
 $$
     =V(\Phi_l),
