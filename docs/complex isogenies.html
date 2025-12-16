@@ -28,11 +28,11 @@ $$
 E_{l\tau} \to E_{\tau}.
 $$
 Such a quotient map will be written $\phi_\tau$ (whenever $l$ is understood).
-<h3>Proposition</h3>
-Let $\tau \in \UH$ and let $\Lambda \subseteq \Lambda_\tau$ be a sublattice of prime index $l$ (primality actually necessary?). Then there exists $\omega_1\in \Lambda_\tau\setminus \Lambda, \omega_2\in \Lambda$ such that
+<h3>Proposition 1</h3>
+Let $\tau \in \mathcal{H}$ and let $\Lambda \subseteq \Lambda_\tau$ be a sublattice of prime index $l$ (primality actually necessary?). Then there exists $\omega_1\in \Lambda_\tau\setminus \Lambda, \omega_2\in \Lambda$ such that
 \begin{align}
-    \B&:=\{\omega_1, \omega_2\} \text{ is a basis of }\Lambda_\tau, \label{cond 1} \\
-    \B'&:=\{lw_1,w_2\} \text{ is a basis of }\Lambda. \label{cond 2}
+    \mathcal{B}&:=\{\omega_1, \omega_2\} \text{ is a basis of }\Lambda_\tau, \label{cond 1} \\
+    \mathcal{B}'&:=\{lw_1,w_2\} \text{ is a basis of }\Lambda. \label{cond 2}
 \end{align}
 <br>
 The proofs follow at the end of the post.
@@ -43,12 +43,12 @@ The proofs follow at the end of the post.
 <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJFXzEiXSxbMSwwLCJFXzIiXSxbMCwxLCJFXzEnIl0sWzEsMSwiRV8yJyJdLFswLDFdLFswLDJdLFsyLDNdLFsxLDNdXQ==&embed" width="304" height="304" style="border-radius: 8px; border: none;"></iframe>
 <br>
 
-<h3>Corollary</h3>
-    Let $\phi:E \to E'$ be an $l$-isogeny. Then there exists $\tau\in \UH$ such that $$\phi \cong \phi_\tau.$$
+<h3>Corollary 2</h3>
+    Let $\phi:E \to E'$ be an $l$-isogeny. Then there exists $\tau\in \mathcal{H}$ such that $$\phi \cong \phi_\tau.$$
 <br>
-We can go a little further in this classification by avoiding repetitions of isomorphism classes of isogenies of the form $\phi_\tau$. Therefore we would like to understand under which conditions we have $\phi_\tau \cong \phi_{\tau'}$ for different $\tau,\tau'\in \UH$.
-<h3>Proposition 1</h3>
-    Let $\tau,\tau' \in \UH$. Then $$
+We can go a little further in this classification by avoiding repetitions of isomorphism classes of isogenies of the form $\phi_\tau$. Therefore we would like to understand under which conditions we have $\phi_\tau \cong \phi_{\tau'}$ for different $\tau,\tau'\in \mathcal{H}$.
+<h3>Proposition 3</h3>
+    Let $\tau,\tau' \in \mathcal{H}$. Then $$
     (\Lambda_{\tau},\Lambda_{l\tau}) \cong (\Lambda_{\tau'},\Lambda_{l\tau'}) \iff \exists \gamma \in \Gamma_0(l): \tau = \gamma \tau'.
     $$
 <br>
@@ -61,25 +61,25 @@ $$
 
 Moreover, in terms of moduli spaces, this means that the following map is a bijection
 \begin{align}
-    \Gamma_0(l) \setminus \UH &\xrightarrow[]{\cong} \frac{\{\text{$l$-isogenies}\}}{\cong} \label{l-isogenies} \\
+    \Gamma_0(l) \setminus \mathcal{H} &\xrightarrow[]{\cong} \frac{\{\text{$l$-isogenies}\}}{\cong} \label{l-isogenies} \\
     [\tau] &\mapsto [\phi_\tau]. \nonumber
 \end{align}
-We then say that $Y_0(l):=\Gamma_0(l)\setminus \UH$ is a moduli space of isogenies.
+We then say that $Y_0(l):=\Gamma_0(l)\setminus \mathcal{H}$ is a moduli space of isogenies.
 
 <h2>Proofs</h2>
 <h3>Proof of the proposition 1</h3>
     Let $\omega_1,\omega_2\in \Lambda_\tau$. Then condition \ref{cond 1} holds if and only if there exists $\begin{pmatrix}
         a' & b'\\ c' & d'
-    \end{pmatrix}\in SL_2(\Z)$ such that 
+    \end{pmatrix}\in SL_2(\mathbb{Z})$ such that 
     \begin{align*}
         \omega_1 &= a'\tau + b', \\
         \omega_2 &= c' \tau + d'.
     \end{align*}
-    Let $\B':=\{\Tilde{\omega}_1,\Tilde{\omega}_2\}$ be any basis of $\Lambda$ and write $\Tilde{\omega}_1=x\tau + y$, $\Tilde{\omega}_2=z\tau + t$.
+    Let $\mathcal{B}':=\{\Tilde{\omega}_1,\Tilde{\omega}_2\}$ be any basis of $\Lambda$ and write $\Tilde{\omega}_1=x\tau + y$, $\Tilde{\omega}_2=z\tau + t$.
     
     Condition \ref{cond 2}, holds if and only if there exists $\begin{pmatrix}
         a & b \\ c& d
-    \end{pmatrix} \in SL_2(\Z)$ such that
+    \end{pmatrix} \in SL_2(\mathbb{Z})$ such that
     \begin{align*}
         l\omega_1 &= a\Tilde{\omega}_1+b\Tilde{\omega}_1 = (ax+bz)\tau+ay+bt,\\
         \omega_2 &= c\Tilde{\omega}_1+d\Tilde{\omega}_2=(cx+dz)\tau+ cy+dt .
@@ -109,16 +109,16 @@ We then say that $Y_0(l):=\Gamma_0(l)\setminus \UH$ is a moduli space of isogeni
         l & 0\\ 0 & 1
     \end{pmatrix}$ is invertible, $\begin{pmatrix}
         a' & b'\\ c' & d'
-    \end{pmatrix}$ is fully determined by the other variables, but it still has to hold that the matrix we will obtain will be in $SL_2(\Z)$. In other words, conditions \ref{cond 1} and \ref{cond 2} are equivalent to \ref{cond 1} and the existence of a matrix $\begin{pmatrix}
+    \end{pmatrix}$ is fully determined by the other variables, but it still has to hold that the matrix we will obtain will be in $SL_2(\mathbb{Z})$. In other words, conditions \ref{cond 1} and \ref{cond 2} are equivalent to \ref{cond 1} and the existence of a matrix $\begin{pmatrix}
         a & b\\ c & d
-    \end{pmatrix}\in SL_2(\Z)$ such that $$M:=\frac{1}{l}\begin{pmatrix}
+    \end{pmatrix}\in SL_2(\mathbb{Z})$ such that $$M:=\frac{1}{l}\begin{pmatrix}
         1 & 0\\ 0 & l
     \end{pmatrix}\begin{pmatrix}
         a & b\\ c & d
     \end{pmatrix}
     \begin{pmatrix}
         x & y\\ z & t
-    \end{pmatrix}\in SL_2(\Z).$$
+    \end{pmatrix}\in SL_2(\mathbb{Z}).$$
    Since $\det \begin{pmatrix}
         x & y\\ z & t
     \end{pmatrix}=l$ and $\det \begin{pmatrix}
@@ -132,7 +132,7 @@ We then say that $Y_0(l):=\Gamma_0(l)\setminus \UH$ is a moduli space of isogeni
     
     The first and the second cases are symmetric, so it suffices to find $a,b$ in the first and the third, which we can do all at once. So assume $(x,z)=1$.
 
-    We want to find coprime numbers $a,b$ such that $ax+bz$ and $ay+bt$ are divisible by $l$. Therefore let us write $ax+bz=kl$ for some $k\in \Z$, and by lemma \ref{span}, $ax+bz=kl$ if and only if 
+    We want to find coprime numbers $a,b$ such that $ax+bz$ and $ay+bt$ are divisible by $l$. Therefore let us write $ax+bz=kl$ for some $k\in \mathbb{Z}$, and by lemma \ref{span}, $ax+bz=kl$ if and only if 
     \begin{align}
         a &= kla_0-(\alpha+kl\beta)z \label{ab}, \\
         b &= klb_0+(\alpha+kl\beta)x, \nonumber
@@ -180,7 +180,7 @@ We then say that $Y_0(l):=\Gamma_0(l)\setminus \UH$ is a moduli space of isogeni
     We have 
     \begin{align*}
     (\Lambda_{\tau},\Lambda_{l\tau}) \cong (\Lambda_{\tau'},\Lambda_{l\tau'})&\iff
-    \exists \alpha \in \C^*: \alpha \Lambda_{\tau} = \Lambda_{\tau'}, \alpha \Lambda_{l\tau} = \Lambda_{l\tau'} \\
+    \exists \alpha \in \mathbb{C}^*: \alpha \Lambda_{\tau} = \Lambda_{\tau'}, \alpha \Lambda_{l\tau} = \Lambda_{l\tau'} \\
     &\iff \exists \gamma \in \Gamma(1): \tau = \gamma\tau', \alpha = c\tau'+d, \alpha \Lambda_{l\tau} = \Lambda_{l\tau'} \\
     &\iff \exists \gamma \in \Gamma(1): \tau = \gamma \tau',~~ (c\tau'+d) \Lambda_{l\gamma \tau'} = \Lambda_{l\tau'}\\
     &\iff \exists \gamma,\gamma'\in \Gamma(1):  \tau = \gamma \tau',~~
@@ -197,63 +197,28 @@ We then say that $Y_0(l):=\Gamma_0(l)\setminus \UH$ is a moduli space of isogeni
     Therefore,
     \begin{align*}
 (\Lambda_{\tau},\Lambda_{l\tau}) \cong (\Lambda_{\tau'},\Lambda_{l\tau'})
-    &\iff \exists \gamma \in \Gamma(1): \tau = \gamma \tau',~~ l\nmid d', \exists a,b\in \Z\text{ coprime }: ad'-lbc'=1,\\
+    &\iff \exists \gamma \in \Gamma(1): \tau = \gamma \tau',~~ l\nmid d', \exists a,b\in \mathbb{Z}\text{ coprime }: ad'-lbc'=1,\\
     &~~~~~~~~~~~~\gamma' l\tau' = l\begin{pmatrix}
         a & b \\ lc' & d'
     \end{pmatrix} \tau' = \begin{pmatrix}
         a & lb\\ c' & d'
     \end{pmatrix} l\tau' \\
-    &\iff \exists\gamma\in \Gamma(1), \tau = \gamma \tau',~~ a,b\in \Z: ad'-lbc'=1,\\
+    &\iff \exists\gamma\in \Gamma(1), \tau = \gamma \tau',~~ a,b\in \mathbb{Z}: ad'-lbc'=1,\\
     &~~~~~~~~~~~~\gamma'^{-1}\begin{pmatrix}
         a & lb \\ c'& d' 
     \end{pmatrix}\in \Gamma(1)_{l\tau'}.
     \end{align*}
-    We now distinguish three cases (actually the only ones with stabilizers? check silverman II):
-    \begin{itemize}
-        \item If $\tau' \notin \{e^{\pm 2\pi i/3}, i\}$, then $\Gamma(1)_{\tau'} = \{\pm I\}$, so $\gamma = \pm \begin{pmatrix}
-        a' & lb' \\ c & d
-    \end{pmatrix}$.
-    \item If $\tau' = i$, then $ \Gamma(1)_{\tau'} = \left\{\pm I, \pm \begin{pmatrix}
-        0 & 1  \\ -1 & 0
-    \end{pmatrix}\right\} $. If $\gamma^{-1}\begin{pmatrix}
-        a' & lb' \\ c& d 
-    \end{pmatrix} = \pm\begin{pmatrix}
-        0 & 1  \\ -1 & 0
-    \end{pmatrix}$, then $\gamma = \pm\begin{pmatrix}
-        lb' & -a' \\ d & -c
-    \end{pmatrix}$, and in particular $c = \pm d$, $d = \mp c$, which implies $c=d=0$ and contradicts that $\det \gamma =1$.
-    \item If $\tau' = e^{\pm 2\pi i/3}$, then $\Gamma(1)_\tau = \left\{\pm I,\pm \begin{pmatrix}
-        -1 & -1 \\ 1 & 0
-    \end{pmatrix}, \pm \begin{pmatrix}
-        0 & 1 \\ -1 & -1
-    \end{pmatrix}\right\}$. 
-    \begin{itemize}
-        \item If $\gamma^{-1}\begin{pmatrix}
-        a' & lb' \\ c& d 
-    \end{pmatrix} = \pm\begin{pmatrix}
-        -1 & -1 \\ 1 & 0
-    \end{pmatrix}$, then $ \gamma = \pm  \begin{pmatrix}
-        -lb' & a'-lb' \\ -d & c-d
-    \end{pmatrix}$, and in particular, $c = \mp d$, $d=\pm c \mp d = -d \mp d$, so $2d\pm d = 0$, meaning $d=0$ and $c=0$, which again contradicts that $\det \gamma =1$.
-    \item If $\gamma^{-1}\begin{pmatrix}
-        a' & lb' \\ c& d 
-    \end{pmatrix} =  \pm \begin{pmatrix}
-        0 & 1 \\ -1 & -1
-    \end{pmatrix}$, then $\gamma = \pm \begin{pmatrix}
-        -a'+lb' & -a' \\ -c+d & -c
-    \end{pmatrix}$, and in particular $d= \mp c$, $c = \mp c\pm d = \mp c-c$, so $2c \pm c=0$, meaning that $c = d=0$, contradicting that $\det \gamma =1$
-        \end{itemize}
-    \end{itemize}
+    Now, either the stabilizer is trivial, or it makes the calculation trivial (if you want to see that calculations, explain to me how to use itemize in HTML).
     Therefore in any case, one must have $\gamma^{-1}\begin{pmatrix}
         a' & lb' \\ c& d 
     \end{pmatrix} = \pm I$. If $\gamma = \begin{pmatrix}
         -a' & -lb' \\ -c& -d 
     \end{pmatrix} $, then $c=d=0$, which contradicts that $\det \gamma =1$. Therefore,
     \begin{align*}
-    &\exists \gamma \in \Gamma(1), a',b'\in \Z: a'd-lb'c=1, \gamma^{-1}\begin{pmatrix}
+    &\exists \gamma \in \Gamma(1), a',b'\in \mathbb{Z}: a'd-lb'c=1, \gamma^{-1}\begin{pmatrix}
         a' & lb' \\ c& d 
     \end{pmatrix}\in \Gamma(1)_{\tau'} \\
-    &\iff \exists \gamma\in \Gamma(1), a',b'\in \Z: a'd-lb'c=1, \gamma = \begin{pmatrix}
+    &\iff \exists \gamma\in \Gamma(1), a',b'\in \mathbb{Z}: a'd-lb'c=1, \gamma = \begin{pmatrix}
         a' & lb' \\ c& d
     \end{pmatrix}\\
     &\iff \gamma \in \Gamma^0(l).
