@@ -29,7 +29,7 @@ Let $E,E'$ be elliptic curves. An important question to ask, for instance in cry
 In another post, we have classified $l$-isogenies. Our question is to determine, more coarsely, whether such an isogeny exists, abstracting away from its precise isomorphism class; we want to forget this data and are only interested in pairs of isomorphism classes of elliptic curves connected by an
 $l$-isogeny. In other words, we wish to retain only the data of the domains and codomains of our 
 $l$-isogenies. We can formulate this mathematically as follows.
-We have two covariant functors $$\Dom, \Cod:\I_l \to \El$$ of domain and codomain. These induce two maps on the moduli spaces <br>
+We have two covariant functors $$\mathrm{Dom}, \mathrm{Cod}:l-\mathrm{Isogenies} \to \mathrm{Elliptic curves}$$ of domain and codomain. These induce two maps on the moduli spaces <br>
 <!-- https://q.uiver.app/#q=WzAsMyxbMSwwLCJZXzAobCkiXSxbMCwxLCJZKDEpIl0sWzIsMSwiWSgxKSJdLFswLDEsInxcXG1hdGhybXtEb219fCIsMl0sWzAsMiwifFxcbWF0aHJte0NvZH18Il1d -->
 <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMyxbMSwwLCJZXzAobCkiXSxbMCwxLCJZKDEpIl0sWzIsMSwiWSgxKSJdLFswLDEsInxcXG1hdGhybXtEb219fCIsMl0sWzAsMiwifFxcbWF0aHJte0NvZH18Il1d&embed" width="435" height="304" style="border-radius: 8px; border: none;"></iframe>
 <br>
@@ -42,59 +42,49 @@ Thus, to understand $\pi_l^0(Y_0(l))$, we can simply find the polynomials whose 
 
 
 Let us try to calculate this locus. We denote $[\cdot]$ the classes in $Y(1)$ and $\overline{\cdot}$ those in $Y_0(l)$. We have
-$$
-    \pi_l(Y_0(l)) = \{([l\tau'],[\tau']):\overline{\tau'}\in Y_0(l))\}
-$$
-$$
-    =\{([l\tau'],[\tau]): [\tau] = [\tau'], [\tau]\in Y(1), \overline{\tau'}\in Y_0(l)\}.
-$$
+\begin{align*}
+    \pi_l(Y_0(l)) &= \{([l\tau'],[\tau']):\overline{\tau'}\in Y_0(l))\} \\
+    &=\{([l\tau'],[\tau]): [\tau] = [\tau'], [\tau]\in Y(1), \overline{\tau'}\in Y_0(l)\}.
+\end{align*}
 Yet, 
-$$
+\begin{align*}
     [\tau'] = [\tau] &\iff \tau' = \gamma \tau,\quad \gamma \in \Gamma(1) 
-     \iff \Gamma_0(l) \tau' = \Gamma_0(l) \gamma \tau
-$$
-$$
-\iff \Gamma_0(l) \tau' = \Gamma_0(l) \gamma_i\tau, \quad 1\leq i \leq k
-$$
-$$
-\iff \overline{\tau'} = \overline{\gamma_i\tau}. 
-$$
+    & &\iff \Gamma_0(l) \tau' = \Gamma_0(l) \gamma \tau \\
+    &\iff \Gamma_0(l) \tau' = \Gamma_0(l) \gamma_i\tau, \quad 1\leq i \leq k
+    & &\iff \overline{\tau'} = \overline{\gamma_i\tau}. 
+\end{align*}
 Therefore,
-$$
-    \pi_l(Y_0(l)) = \{([l\gamma_i\tau],[\tau]): [\tau]\in Y(1)\}
-$$
-$$
-    = \bigcup_{[\tau]\in Y(1)}\{[l\gamma_i\tau]: 1\leq i\leq k\}\times \{[\tau]\}
-$$
+\begin{align*}
+    \pi_l(Y_0(l)) &= \{([l\gamma_i\tau],[\tau]): [\tau]\in Y(1)\}\\
+    &= \bigcup_{[\tau]\in Y(1)}\{[l\gamma_i\tau]: 1\leq i\leq k\}\times \{[\tau]\}
+\end{align*}
 We may now apply $j$:
-$$
-    (j\times j)\circ \pi_l(Y_0(l)) = \{j(l\gamma_i\tau)|1\leq i \leq k\} \times \{j(\tau)\}
-$$
-$$
-    = \bigcup_{\tau\in Y(1)}  V(\Phi^0_l(\tau,y))\times \{j(\tau)\},
-$$
+\begin{align*}
+    (j\times j)\circ \pi_l(Y_0(l)) &= \{j(l\gamma_i\tau)|1\leq i \leq k\} \times \{j(\tau)\}\\
+    &= \bigcup_{\tau\in Y(1)}  V(\Phi^0_l(\tau,y))\times \{j(\tau)\},
+\end{align*}
 where 
 $$
 \Phi^0_l(\tau,y) = \prod_{i=1}^k\left(y-j\left(l\gamma_i\tau\right)\right).
 $$
 Up to now, nothing fantastic has happened; we may have computed this for any invariant. Now is where something special happens. We have the following result.
-<h3>Lemma</h3>
-Any holomorphic modular function $f(\tau)$ for $\Gamma(1)$ is equal to a polynomial $A$ in $j$.
+<h3>Lemma 1</h3>
+Any holomorphic modular function $f(\tau)$ for $\Gamma(1)$ is equal to a polynomial in $j$.
 <h4>Proof</h4>
-See \lemma 11.10 of Cox, <em>primes of the form $x^2+ny^2$</em> or corollary 4.2, chapter I of Silverman <em>Advanced topics in the arithmetic of elliptic curves</em>.  
+See lemma 11.10 of Cox, <em>primes of the form $x^2+ny^2$</em> or corollary 4.2, chapter I of Silverman, <em>Advanced topics in the arithmetic of elliptic curves</em>.  
 <br> <br>
 Cox then uses this to prove the following proposition.
-<h3>Proposition</h3>
+<h3>Proposition 2</h3>
     The coefficients of $\Phi^0_l(\tau,y)$ considered a polynomial in $y$ are polynomials in $j(\tau)$.
 <br> <br>
-By lemma \ref{polynomial in j}, it suffices to show that they are holomorphic modular functions of level $\Gamma(1)$.
+By lemma 1, it suffices to show that they are holomorphic modular functions of level $\Gamma(1)$.
 In order to prove this, we will need an explicit set of representatives of the cosets.
-<h3>Lemma</h3>
+<h3>Lemma 3</h3>
     Let 
     $$
     C(l) := \left\{\begin{pmatrix}
         a & b\\ 0 & d
-    \end{pmatrix}: ad = l, a>0, 0\leq b<d, \mathrm{gcd}(a,b,d)=1\right\}
+    \end{pmatrix}: ad = l, a>0, 0\leq b\leq d-1, \mathrm{gcd}(a,b,d)=1\right\}
     $$
     and $\sigma_0=\begin{pmatrix}
         l & 0 \\ 0 & 1
@@ -107,7 +97,7 @@ In order to prove this, we will need an explicit set of representatives of the c
 How do we get here and what is its relationship with the form of level structures?
 This classification is of particular interest, because it also gives us a very explicit formula for the expression $j(l\gamma_i\tau)$. Write $j_l$ for the function $j(l\tau)$.
 
-We can enumerate the elements of $C(m)$ so that $\gamma_i$ belongs exactly to the right coset given by $\sigma_i$. Notice that multiplying by $l$ is the same as applying $\sigma_0$, so in our case $l\gamma_i\tau = \sigma_0\gamma_i\tau$. Moreover, from \ref{right cosets}, there exists $\Tilde{\gamma}_i\in \Gamma(1)$ such that $\sigma_0\gamma_i= \Tilde{\gamma}_i\sigma$, so $l\gamma_i\tau = \Tilde{\gamma}_i\sigma\tau$. In particular, since $j$ is $\Gamma(1)$-invariant,
+We can enumerate the elements of $C(m)$ so that $\gamma_i$ belongs exactly to the right coset given by $\sigma_i$. Notice that multiplying by $l$ is the same as applying $\sigma_0$, so in our case $l\gamma_i\tau = \sigma_0\gamma_i\tau$. Moreover, there exists $\hat{\gamma}_i\in \Gamma(1)$ such that $\sigma_0\gamma_i= \hat{\gamma}_i\sigma$, so $l\gamma_i\tau = \hat{\gamma}_i\sigma\tau$. In particular, since $j$ is $\Gamma(1)$-invariant,
 $$
 j(l\gamma_i\tau) = j(\sigma \tau)
 $$
@@ -118,20 +108,20 @@ Write $\sigma_i = \begin{pmatrix}
     a & b \\ 0 & d
 \end{pmatrix}$, and notice that then $\sigma\tau = a\tau / d + b/d$. We then have 
 $$q(\sigma_i\tau) = e^{2\pi i(a\tau /d + b/d)}=(e^{2\pi i \tau})^{a/d}e^{2\pi ib/d}=q^{a/d}(e^{2\pi i/l})^{lb/d}=q^{a^2/l}\zeta_l^{ab},$$ 
-since $ad = l$, where $\zeta_l= e^{2\pi i/l}$. Thus, writing $j(\tau) = \frac{1}{q}+j^0(q)$, where $j^0(t)\in \Z[[t]]$,
+since $ad = l$, where $\zeta_l= e^{2\pi i/l}$. Thus, writing $j(\tau) = \frac{1}{q}+j^0(q)$, where $j^0(t)\in \mathbb{Z}[[t]]$,
 $$
 j_l(\gamma_i\tau)=j(\sigma_i\tau) = \zeta_l^{-ab}\frac{1}{q^{a^2/l}}+j^0(\zeta_l^{ab}q^{a^2/l})
 $$
 which has only one negative exponent (watch out for rational ones). 
 
 Let $J_\tau:=\{j_l(\gamma_1\tau),\dots,j_l(\gamma_k\tau)\}$.
-<h4>Proof</h4>
+<h4>Proof of proposition 1</h4>
     Here we give the proof of theorem 11.9 in Cox for clarity of the construction.
 
     It appears clearly that those coefficients are symmetric polynomials in the elements of $J_\tau$. 
-    Therefore, it suffices to show that any symmetric polynomial in these elements is a polynomial in $j(\tau)$. Let $S\in \mathbb{C}[x_1,\dots,x_k]$ (not using the free hypothesis that the coefficients are actually integers?) be a symmetric polynomial. By the first part of \ref{polynomial in j}, it suffices to show that $S(J_\tau)$ is a holomorphic modular function for $\Gamma(1)$. 
+    Therefore, it suffices to show that any symmetric polynomial in these elements is a polynomial in $j(\tau)$. Let $S\in \mathbb{C}[x_1,\dots,x_k]$ (not using the free hypothesis that the coefficients are actually integers?) be a symmetric polynomial. By the first part of Proposition 2, it suffices to show that $S(J_\tau)$ is a holomorphic modular function for $\Gamma(1)$. 
 
-    Let us show weak modularity. Since the $\gamma_i$'s are representatives of the cosets, for any $\gamma\in \Gamma(1)$ there exists a bijection $\alpha$ of $\{1,\dots,k\}$ to itself such that for any $i$ there exists $\gamma_i'\in \Gamma_0(l)$ such that $\gamma_i\gamma = \gamma_i'\gamma_{\alpha(i)}$. Notice that the equivalence \ref{gamma0} tells us that $j_l(\tau)$ is $\Gamma_0(l)$-invariant. Indeed, for any $\Tilde{\gamma}\in \Gamma_0(l)$, $\phi_{\Tilde{\gamma}\tau}\cong \phi_\tau$, and in particular $ E_{l\Tilde{\gamma}\tau}\cong E_{l\tau}$, meaning that $j(l\Tilde{\gamma}\tau)=j(l\tau)$. Therefore $j_l(\gamma_i\gamma) = j_l(\gamma_i'\gamma_{\alpha(i)}) = j_l(\gamma_{\alpha(i)})$, and 
+    Let us show weak modularity. Since the $\gamma_i$'s are representatives of the cosets, for any $\gamma\in \Gamma(1)$ there exists a bijection $\alpha$ of $\{1,\dots,k\}$ to itself such that for any $i$ there exists $\gamma_i'\in \Gamma_0(l)$ such that $\gamma_i\gamma = \gamma_i'\gamma_{\alpha(i)}$. A simple calculation shows that $j_l(\tau)$ is $\Gamma_0(l)$-invariant. Indeed, for any $\hat{\gamma}\in \Gamma_0(l)$, $\phi_{\hat{\gamma}\tau}\cong \phi_\tau$, and in particular $ E_{l\hat{\gamma}\tau}\cong E_{l\tau}$, meaning that $j(l\hat{\gamma}\tau)=j(l\tau)$. Therefore $j_l(\gamma_i\gamma) = j_l(\gamma_i'\gamma_{\alpha(i)}) = j_l(\gamma_{\alpha(i)})$, and 
     $$
     S(J_{\gamma \tau}) = S(j_l(\gamma_{\alpha(1)}\tau),\dots ,j_l(\gamma_{\alpha(k)}\tau)) = S(J_\tau)
     $$
@@ -139,8 +129,8 @@ Let $J_\tau:=\{j_l(\gamma_1\tau),\dots,j_l(\gamma_k\tau)\}$.
 
     Since $j$ is holomorphic, the functions in $J_\tau$ are too, and so is $S(J_\tau)$.
 
-    Therefore we just need to make sure that $S(J_\tau)$ is meromorphic at the cusps. But this is clear, because we see from \ref{q exp j sigma} that $j_l(\gamma_i\tau)$ is, then so is $S(J_\tau)$.
-<br> <br>
+    Therefore we just need to make sure that $S(J_\tau)$ is meromorphic at the cusps. But this is clear, because we see from the expansion that $j_l(\gamma_i\tau)$ is, then so is $S(J_\tau)$.
+<br>CQFD <br> <br> 
 Hence, there exists a polynomial $\Phi_l(x,y)\in \mathbb{C}[x,y]$ such that
 $$
     \Phi_l(j(\tau),y) = \Phi^0_l(\tau,y).
