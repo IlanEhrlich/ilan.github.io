@@ -22,18 +22,18 @@
 
 <body>
 
-Our question is to determine, more coarsely, whether such an isogeny exists, abstracting away from its precise isomorphism class; we want to forget this data and are only interested in pairs of isomorphism classes of elliptic curves connected by an
+Let $E,E'$ be elliptic curves. An important question to ask, for instance in cryptography is: 
+<p>
+	Does their exist <em>any</em> isogeny of given degree $l$ between $E$ and $E'$?
+</p>
+In another post, we have classified $l$-isogenies. Our question is to determine, more coarsely, whether such an isogeny exists, abstracting away from its precise isomorphism class; we want to forget this data and are only interested in pairs of isomorphism classes of elliptic curves connected by an
 $l$-isogeny. In other words, we wish to retain only the data of the domains and codomains of our 
 $l$-isogenies. We can formulate this mathematically as follows.
-We have two covariant functors $$\Dom, \Cod:\I_l \to \El$$ of domain and codomain. These induce two maps on the moduli spaces. 
-\begin{equation}\label{diagram Y(1)}
-\begin{tikzcd}
-	& {Y_0(l)} \\
-	{Y(1)} && {Y(1)}
-	\arrow["{|\Dom|}"', from=1-2, to=2-1]
-	\arrow["{|\Cod|}", from=1-2, to=2-3]
-\end{tikzcd}, \end{equation}
-and thus a map
+We have two covariant functors $$\Dom, \Cod:\I_l \to \El$$ of domain and codomain. These induce two maps on the moduli spaces <br>
+<!-- https://q.uiver.app/#q=WzAsMyxbMSwwLCJZXzAobCkiXSxbMCwxLCJZKDEpIl0sWzIsMSwiWSgxKSJdLFswLDEsInxcXG1hdGhybXtEb219fCIsMl0sWzAsMiwifFxcbWF0aHJte0NvZH18Il1d -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMyxbMSwwLCJZXzAobCkiXSxbMCwxLCJZKDEpIl0sWzIsMSwiWSgxKSJdLFswLDEsInxcXG1hdGhybXtEb219fCIsMl0sWzAsMiwifFxcbWF0aHJte0NvZH18Il1d&embed" width="435" height="304" style="border-radius: 8px; border: none;"></iframe>
+<br>
+	and thus a map
 $$\pi^0_l: Y_0(l)\to Y(1) \times Y(1).$$
 Thus, the object that interests us is the image $\pi_l^0(Y_0(l))$; this parametrizes pairs of isomorphism classes of elliptic curves connected by an $l$-isogeny.
 
@@ -42,44 +42,54 @@ Thus, to understand $\pi_l^0(Y_0(l))$, we can simply find the polynomials whose 
 
 
 Let us try to calculate this locus. We denote $[\cdot]$ the classes in $Y(1)$ and $\overline{\cdot}$ those in $Y_0(l)$. We have
-\begin{align*}
-    \pi_l(Y_0(l)) &= \{([l\tau'],[\tau']):\overline{\tau'}\in Y_0(l))\} \\
-    &=\{([l\tau'],[\tau]): [\tau] = [\tau'], [\tau]\in Y(1), \overline{\tau'}\in Y_0(l)\}.
-\end{align*}
+$$
+    \pi_l(Y_0(l)) = \{([l\tau'],[\tau']):\overline{\tau'}\in Y_0(l))\}
+$$
+$$
+    =\{([l\tau'],[\tau]): [\tau] = [\tau'], [\tau]\in Y(1), \overline{\tau'}\in Y_0(l)\}.
+$$
 Yet, 
-\begin{align*}
+$$
     [\tau'] = [\tau] &\iff \tau' = \gamma \tau,\quad \gamma \in \Gamma(1) 
-    & &\iff \Gamma_0(l) \tau' = \Gamma_0(l) \gamma \tau \\
-    &\iff \Gamma_0(l) \tau' = \Gamma_0(l) \gamma_i\tau, \quad 1\leq i \leq k
-    & &\iff \overline{\tau'} = \overline{\gamma_i\tau}. 
-\end{align*}
+     \iff \Gamma_0(l) \tau' = \Gamma_0(l) \gamma \tau
+$$
+$$
+\iff \Gamma_0(l) \tau' = \Gamma_0(l) \gamma_i\tau, \quad 1\leq i \leq k
+$$
+$$
+\iff \overline{\tau'} = \overline{\gamma_i\tau}. 
+$$
 Therefore,
-\begin{align*}
-    \pi_l(Y_0(l)) &= \{([l\gamma_i\tau],[\tau]): [\tau]\in Y(1)\}\\
-    &= \bigcup_{[\tau]\in Y(1)}\{[l\gamma_i\tau]: 1\leq i\leq k\}\times \{[\tau]\}
-\end{align*}
+$$
+    \pi_l(Y_0(l)) = \{([l\gamma_i\tau],[\tau]): [\tau]\in Y(1)\}
+$$
+$$
+    = \bigcup_{[\tau]\in Y(1)}\{[l\gamma_i\tau]: 1\leq i\leq k\}\times \{[\tau]\}
+$$
 We may now apply $j$:
-\begin{align*}
-    (j\times j)\circ \pi_l(Y_0(l)) &= \{j(l\gamma_i\tau)|1\leq i \leq k\} \times \{j(\tau)\}\\
-    &= \bigcup_{\tau\in Y(1)}  V(\Phi^0_l(\tau,y))\times \{j(\tau)\},
-\end{align*}
+$$
+    (j\times j)\circ \pi_l(Y_0(l)) = \{j(l\gamma_i\tau)|1\leq i \leq k\} \times \{j(\tau)\}
+$$
+$$
+    = \bigcup_{\tau\in Y(1)}  V(\Phi^0_l(\tau,y))\times \{j(\tau)\},
+$$
 where 
-\begin{equation}\label{def Phi0}
+$$
 \Phi^0_l(\tau,y) = \prod_{i=1}^k\left(y-j\left(l\gamma_i\tau\right)\right).
-\end{equation}
+$$
 Up to now, nothing fantastic has happened; we may have computed this for any invariant. Now is where something special happens. We have the following result.
-<h3>Lemma <\h3>
-Any holomorphic modular function $f(\tau)$ for $\Gamma(1)$ is equal to a polynomial $A$ in $j$. Moreover, if the $q$-expansion of $f$ has integer coefficients, then so does $A$.
-\begin{proof}
-See \cite[lemma 11.10]{Cox} or \cite[I, corollary 4.2]{Silverman2}.  
-\end{proof}
+<h3>Lemma</h3>
+Any holomorphic modular function $f(\tau)$ for $\Gamma(1)$ is equal to a polynomial $A$ in $j$.
+<h4>Proof</h4>
+See \lemma 11.10 of Cox, <em>primes of the form $x^2+ny^2$</em> or corollary 4.2, chapter I of Silverman <em>Advanced topics in the arithmetic of elliptic curves</em>.  
+<br> <br>
 Cox then uses this to prove the following proposition.
-\begin{proposition}\label{coefficients phi0l}
+<h3>Proposition</h3>
     The coefficients of $\Phi^0_l(\tau,y)$ considered a polynomial in $y$ are polynomials in $j(\tau)$.
-\end{proposition}
+<br> <br>
 By lemma \ref{polynomial in j}, it suffices to show that they are holomorphic modular functions of level $\Gamma(1)$.
 In order to prove this, we will need an explicit set of representatives of the cosets.
-\begin{lemma}
+<h3>Lemma</h3>
     Let 
     $$
     C(l) := \left\{\begin{pmatrix}
@@ -89,17 +99,18 @@ In order to prove this, we will need an explicit set of representatives of the c
     and $\sigma_0=\begin{pmatrix}
         l & 0 \\ 0 & 1
     \end{pmatrix}\in C(m)$. Then the sets
-    \begin{equation}\label{right cosets}(\sigma_0^{-1}\Gamma(1)\sigma)\cap \Gamma(1), \quad \sigma\in C(l)
-    \end{equation}
+    $$
+	(\sigma_0^{-1}\Gamma(1)\sigma)\cap \Gamma(1), \quad \sigma\in C(l)
+    $$
     are exactly the right cosets of $\Gamma(1)/\Gamma_0(l)$. In particular, $(\sigma_0^{-1}\Gamma(1)\sigma_0)\cap \Gamma(1)=\Gamma(1)$.
-\end{lemma}
+<br> <br>
 How do we get here and what is its relationship with the form of level structures?
 This classification is of particular interest, because it also gives us a very explicit formula for the expression $j(l\gamma_i\tau)$. Write $j_l$ for the function $j(l\tau)$.
 
 We can enumerate the elements of $C(m)$ so that $\gamma_i$ belongs exactly to the right coset given by $\sigma_i$. Notice that multiplying by $l$ is the same as applying $\sigma_0$, so in our case $l\gamma_i\tau = \sigma_0\gamma_i\tau$. Moreover, from \ref{right cosets}, there exists $\Tilde{\gamma}_i\in \Gamma(1)$ such that $\sigma_0\gamma_i= \Tilde{\gamma}_i\sigma$, so $l\gamma_i\tau = \Tilde{\gamma}_i\sigma\tau$. In particular, since $j$ is $\Gamma(1)$-invariant,
-\begin{equation}
+$$
 j(l\gamma_i\tau) = j(\sigma \tau)
-\end{equation}
+$$
 which we can easily compute using an explicit expression for $\sigma$.
     
 For instance, it allows us to compute the $q$-expansion of $j_l(\gamma_i\tau)$:
@@ -108,14 +119,14 @@ Write $\sigma_i = \begin{pmatrix}
 \end{pmatrix}$, and notice that then $\sigma\tau = a\tau / d + b/d$. We then have 
 $$q(\sigma_i\tau) = e^{2\pi i(a\tau /d + b/d)}=(e^{2\pi i \tau})^{a/d}e^{2\pi ib/d}=q^{a/d}(e^{2\pi i/l})^{lb/d}=q^{a^2/l}\zeta_l^{ab},$$ 
 since $ad = l$, where $\zeta_l= e^{2\pi i/l}$. Thus, writing $j(\tau) = \frac{1}{q}+j^0(q)$, where $j^0(t)\in \Z[[t]]$,
-\begin{equation}\label{q exp j sigma}
+$$
 j_l(\gamma_i\tau)=j(\sigma_i\tau) = \zeta_l^{-ab}\frac{1}{q^{a^2/l}}+j^0(\zeta_l^{ab}q^{a^2/l})
-\end{equation}
+$$
 which has only one negative exponent (watch out for rational ones). 
 
 Let $J_\tau:=\{j_l(\gamma_1\tau),\dots,j_l(\gamma_k\tau)\}$.
-\begin{proof}[Proof of Proposition \ref{coefficients phi0l}]
-    Here we copy the proof of \cite[theorem 11.9]{Cox} for clarity of the construction.
+<h4>Proof</h4>
+    Here we give the proof of theorem 11.9 in Cox for clarity of the construction.
 
     It appears clearly that those coefficients are symmetric polynomials in the elements of $J_\tau$. 
     Therefore, it suffices to show that any symmetric polynomial in these elements is a polynomial in $j(\tau)$. Let $S\in \C[x_1,\dots,x_k]$ (not using the free hypothesis that the coefficients are actually integers?) be a symmetric polynomial. By the first part of \ref{polynomial in j}, it suffices to show that $S(J_\tau)$ is a holomorphic modular function for $\Gamma(1)$. 
@@ -129,17 +140,19 @@ Let $J_\tau:=\{j_l(\gamma_1\tau),\dots,j_l(\gamma_k\tau)\}$.
     Since $j$ is holomorphic, the functions in $J_\tau$ are too, and so is $S(J_\tau)$.
 
     Therefore we just need to make sure that $S(J_\tau)$ is meromorphic at the cusps. But this is clear, because we see from \ref{q exp j sigma} that $j_l(\gamma_i\tau)$ is, then so is $S(J_\tau)$.
-\end{proof}
+<br> <br>
 Hence, there exists a polynomial $\Phi_l(x,y)\in \C[x,y]$ such that
-\begin{equation}\label{phi phi0}
+$$
     \Phi_l(j(\tau),y) = \Phi^0_l(\tau,y).
-\end{equation}
+$$
 We call $\Phi_l$ the \textit{classical modular polynomial} of degree $l$.
 Hence, coming back to our computations:
-\begin{align*}
-    (j\times j)\circ \pi_l^0(Y_0(l)) &=  \bigcup_{\tau\in Y(1)} \{j(\tau)\}\times V(\Phi_l(j(\tau),y)) \\
-    &=V(\Phi_l),
-\end{align*}
+$$
+    (j\times j)\circ \pi_l^0(Y_0(l)) =  \bigcup_{\tau\in Y(1)} \{j(\tau)\}\times V(\Phi_l(j(\tau),y)) 
+$$
+$$
+    =V(\Phi_l),
+$$
 which is the equation we were seeking. Therefore, we have
 $$
 \Phi_l(x,y)=0 \iff \exists E,E': E\sim_lE', x=j(E),y=j(E').
