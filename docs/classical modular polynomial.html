@@ -37,7 +37,7 @@ We have two covariant functors $$\Dom, \Cod:\I_l \to \El$$ of domain and codomai
 $$\pi^0_l: Y_0(l)\to Y(1) \times Y(1).$$
 Thus, the object that interests us is the image $\pi_l^0(Y_0(l))$; this parametrizes pairs of isomorphism classes of elliptic curves connected by an $l$-isogeny.
 
-We can go further in this description. Using the $j$-invariant, $j:Y(1)\xrightarrow[]{\sim} \C$ we can consider the image in $\C\times\C$. The following result gives a more precise description of our object of interest. According to Chow's theorem, the space $(j\times j)\circ \pi_l^0(Y_0(l))$ is an affine subvariety of $\C\times \C$.
+We can go further in this description. Using the $j$-invariant, $j:Y(1)\xrightarrow[]{\sim} \mathbb{C}$ we can consider the image in $\mathbb{C}\times\mathbb{C}$. The following result gives a more precise description of our object of interest. According to Chow's theorem, the space $(j\times j)\circ \pi_l^0(Y_0(l))$ is an affine subvariety of $\mathbb{C}\times \mathbb{C}$.
 Thus, to understand $\pi_l^0(Y_0(l))$, we can simply find the polynomials whose vanishing locus is $(j\times j)\circ \pi_l^0(Y_0(l))$.
 
 
@@ -129,7 +129,7 @@ Let $J_\tau:=\{j_l(\gamma_1\tau),\dots,j_l(\gamma_k\tau)\}$.
     Here we give the proof of theorem 11.9 in Cox for clarity of the construction.
 
     It appears clearly that those coefficients are symmetric polynomials in the elements of $J_\tau$. 
-    Therefore, it suffices to show that any symmetric polynomial in these elements is a polynomial in $j(\tau)$. Let $S\in \C[x_1,\dots,x_k]$ (not using the free hypothesis that the coefficients are actually integers?) be a symmetric polynomial. By the first part of \ref{polynomial in j}, it suffices to show that $S(J_\tau)$ is a holomorphic modular function for $\Gamma(1)$. 
+    Therefore, it suffices to show that any symmetric polynomial in these elements is a polynomial in $j(\tau)$. Let $S\in \mathbb{C}[x_1,\dots,x_k]$ (not using the free hypothesis that the coefficients are actually integers?) be a symmetric polynomial. By the first part of \ref{polynomial in j}, it suffices to show that $S(J_\tau)$ is a holomorphic modular function for $\Gamma(1)$. 
 
     Let us show weak modularity. Since the $\gamma_i$'s are representatives of the cosets, for any $\gamma\in \Gamma(1)$ there exists a bijection $\alpha$ of $\{1,\dots,k\}$ to itself such that for any $i$ there exists $\gamma_i'\in \Gamma_0(l)$ such that $\gamma_i\gamma = \gamma_i'\gamma_{\alpha(i)}$. Notice that the equivalence \ref{gamma0} tells us that $j_l(\tau)$ is $\Gamma_0(l)$-invariant. Indeed, for any $\Tilde{\gamma}\in \Gamma_0(l)$, $\phi_{\Tilde{\gamma}\tau}\cong \phi_\tau$, and in particular $ E_{l\Tilde{\gamma}\tau}\cong E_{l\tau}$, meaning that $j(l\Tilde{\gamma}\tau)=j(l\tau)$. Therefore $j_l(\gamma_i\gamma) = j_l(\gamma_i'\gamma_{\alpha(i)}) = j_l(\gamma_{\alpha(i)})$, and 
     $$
@@ -141,7 +141,7 @@ Let $J_\tau:=\{j_l(\gamma_1\tau),\dots,j_l(\gamma_k\tau)\}$.
 
     Therefore we just need to make sure that $S(J_\tau)$ is meromorphic at the cusps. But this is clear, because we see from \ref{q exp j sigma} that $j_l(\gamma_i\tau)$ is, then so is $S(J_\tau)$.
 <br> <br>
-Hence, there exists a polynomial $\Phi_l(x,y)\in \C[x,y]$ such that
+Hence, there exists a polynomial $\Phi_l(x,y)\in \mathbb{C}[x,y]$ such that
 $$
     \Phi_l(j(\tau),y) = \Phi^0_l(\tau,y).
 $$
