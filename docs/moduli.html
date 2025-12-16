@@ -34,7 +34,7 @@ If $M$ is a fine moduli space for $F$, it means that $F$ is representable by $M$
 
     Let $K$ be a field, $S=\mathrm{Spec} K$ and let $X/K$ be an affine scheme, say given by equations $f_1=\dots = f_r = 0$, with $f_1,\dots,f_r\in K[x_1,\dots,x_n]$. Then
     \begin{align*}
-        X(S) &= \{K\text{--morphisms }\Spec K\to X\} \\
+        X(S) &= \{K\text{--morphisms }\mathrm{Spec} K\to X\} \\
         &\cong \left\{ K\text{--algebra homomorphisms }\frac{K[x_1,\dots,x_n]}{(f_1,\dots,f_r)} \to K\right\}\\
         &=\{P \in K^n: f_1(P) =\dots = f_r(P) =0\}.
     \end{align*}
@@ -48,8 +48,8 @@ where the map from the RHS to the LHS is $U\mapsto \tau_U$, where for all $S\in 
 
 Note that a natural transformation is a natural isomorphism, if and only if it is invertible for every object. Therefore, one has
 \begin{align*}
-h^M\cong F &\iff \exists \tau \in \mathrm{Nat}(h^M,F): \forall S\in \Sch, \tau_S \text{ is invertible} \\
-&\iff \exists U\in F(M): \forall S\in \Sch, (\tau_U)_S \text{ is invertible}.
+h^M\cong F &\iff \exists \tau \in \mathrm{Nat}(h^M,F): \forall S\in \mathrm{Sch}, \tau_S \text{ is invertible} \\
+&\iff \exists U\in F(M): \forall S\in \mathrm{Sch}, (\tau_U)_S \text{ is invertible}.
 \end{align*}
 Hence, $M$ is a fine moduli space for $F$, if and only if there exists an object $U\in F(M)$ (called universal object<em></em>) such that for all scheme $S$, the map
 $$
