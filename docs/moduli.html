@@ -24,13 +24,13 @@
 
 <h2>The formalism of moduli functors</h2>
 The first time we encounter moduli spaces, they are said to be spaces whose points are in bijection with isomorphism classes of a given structure. We often give the example of the projective space, or elliptic curves. However the rigorous formalism for this is the following definition, using category theory. In this section, we unpack this definition and in particular, we explain why it generalizes the notion we already knew.
-
+<br> <br>
 A contravariant functor $F:\mathrm{Sch}\to \mathrm{Sets}$ is called a <em>moduli problem</em>. This is extremely little restrictive, in order to give us the flexibility to classify anything we are interested in. For example, in the case of elliptic curves (over an arbitrary scheme), the moduli functor will associate to a scheme $S$ the set of isomorphism classes of $S$-elliptic curves.
 
 A <em>fine moduli space</em> for a moduli problem $F$ is then simply a scheme $S$ representing $F$.
 If $M$ is a fine moduli space for $F$, it means that $F$ is representable by $M$, there exists a natural isomorphism $\tau:F\xrightarrow{\simeq} h^M$, where $h^M=\hom_{\mathrm{Sch}}(-,M)$. 
 <h3>Remark</h3>
-    In <em>Advanced topics in the arithmetic of elliptic curves</em>, by Joseph H. Silvermam, chapter IV, example 2.1.1, the author explains the intuition behind the description of $h^M(S)=\hom_\mathrm{Sch}(S,M)$ as the $S$-points on $M$, noted $M(S)$. He says the following:
+    In <em>Advanced topics in the arithmetic of elliptic curves</em>, by Joseph H. Silvermam, chapter IV, example 2.1.1, the author explains the intuition behind the description of $h^M(S):=\hom_\mathrm{Sch}(S,M)$ as the $S$-points on $M$, noted $M(S)$. He says the following:
 
     Let $K$ be a field, $S=\mathrm{Spec} K$ and let $X/K$ be an affine scheme, say given by equations $f_1=\dots = f_r = 0$, with $f_1,\dots,f_r\in K[x_1,\dots,x_n]$. Then
     \begin{align*}
@@ -40,7 +40,7 @@ If $M$ is a fine moduli space for $F$, it means that $F$ is representable by $M$
     \end{align*}
     Thus $X(S)$ agrees with our intuition of what $X(K)$ should be.
 <br> <br>
-Recall the Yoneda lemma:
+Coming back to moduli spaces, recall the Yoneda lemma:
 $$
 \mathrm{Nat}(h^M,F) \cong F(M),
 $$
@@ -71,9 +71,9 @@ giving in particular the bijection $M(S)\cong F(S)$.
 <h2>Base change of the fine moduli space</h2>
 The fine moduli space is so powerful, because it generates all objects over all schemes just by pullbacks by its rational points. However, many times we are only interested in schemes over a given one (e.g. $\mathbb{C}$). Therefore, we would like to have a moduli space with extra properties that is tailored to it.
 
-Assume that $M$ is a fine moduli space for the moduli problem $F$, and assume that $M$ is over a fixed scheme $X$, with stronger properties $P$, like being a curve over $X$.
+Assume that $M$ is a fine moduli space for the moduli problem $F$, and assume that $M$ is over a fixed scheme $X$, with stronger properties, like being a curve over $X$.
 
-Now, for an $X$-scheme $Y$ we would like to find a scheme $M_Y$ over $Y$ with property $P$ such that it "does the same". What does this mean formally? For this, we need to change the functor a little bit. We let $F_X:=F|_{\mathrm{Sch}_X}$. We now assume that $M_X\in \mathrm{Sch}_X$ is a fine moduli space for $F_X$ instead of $F$.
+Now, for an $X$-scheme $Y$ we would like to find a scheme $M_Y$ over $Y$ with the same properties such that it "does the same". What does this mean formally? For this, we need to change the functor a little bit. We let $F_X:=F|_{\mathrm{Sch}_X}$. We now assume that $M_X\in \mathrm{Sch}_X$ is a fine moduli space for $F_X$ instead of $F$.
 This means that for all $S\in \mathrm{Sch}_X$, 
 $$
 \mathrm{Sch}_X(S,M_X)\cong F_X(S)
@@ -103,12 +103,13 @@ This then defines a bijection, but does not guarantee that this bijection is nat
 <!-- https://q.uiver.app/#q=WzAsNixbMiwyLCJNX1kiXSxbMywyLCJNX1giXSxbMiwzLCJZIl0sWzMsMywiWCJdLFsxLDEsIlMnIl0sWzAsMCwiUyJdLFswLDFdLFswLDJdLFsyLDNdLFsxLDNdLFs0LDAsIlxcb3ZlcmxpbmV7Zn0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw0LCJcXGFscGhhIiwxXSxbNCwxLCJmIiwxLHsiY3VydmUiOi0xfV0sWzUsMSwiZlxcY2lyYyBcXGFscGhhIiwxLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6LTJ9XSxbNSwwLCJcXG92ZXJsaW5le2ZcXGNpcmMgXFxhbHBoYX0iLDEseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDIsIiIsMSx7ImN1cnZlIjoxfV0sWzUsMiwiIiwxLHsiY3VydmUiOjJ9XV0= -->
 <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMiwyLCJNX1kiXSxbMywyLCJNX1giXSxbMiwzLCJZIl0sWzMsMywiWCJdLFsxLDEsIlMnIl0sWzAsMCwiUyJdLFswLDFdLFswLDJdLFsyLDNdLFsxLDNdLFs0LDAsIlxcb3ZlcmxpbmV7Zn0iLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw0LCJcXGFscGhhIiwxXSxbNCwxLCJmIiwxLHsiY3VydmUiOi0xfV0sWzUsMSwiZlxcY2lyYyBcXGFscGhhIiwxLHsibGFiZWxfcG9zaXRpb24iOjYwLCJjdXJ2ZSI6LTJ9XSxbNSwwLCJcXG92ZXJsaW5le2ZcXGNpcmMgXFxhbHBoYX0iLDEseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDIsIiIsMSx7ImN1cnZlIjoxfV0sWzUsMiwiIiwxLHsiY3VydmUiOjJ9XV0=&embed" width="560" height="560" style="border-radius: 8px; border: none;"></iframe>
   <br>
-  $$\epsilon \circ (\overline{f}\circ \alpha) =(\epsilon \circ \overline{f})\circ \alpha  = f \circ \alpha.$$
+  they have the same role. Name $\epsilon:M_Y\to M_X$, then we have
+  $$\epsilon \circ (\overline{f}\circ \alpha) =(\epsilon \circ \overline{f})\circ \alpha  = f \circ \alpha$$
 which suffices. This proves that $\hom_X(S,M_X)\cong \hom_Y(S,M_Y)$ naturally.
 We then have the composition of natural bijections
 $$
-F_Y(S)=F_X(S) \cong \hom_X(S,M_X) \cong \hom_Y(S,M_Y).
+F_Y(S)=F_X(S) \cong \hom_X(S,M_X) \cong \hom_Y(S,M_Y)
 $$
-
+which concludes the proof.
 </body>
 </html>
