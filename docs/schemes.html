@@ -114,7 +114,7 @@ Let $R$ be a ring. We consider the space $\mathrm{Spec}(R)$. We endow it with th
 $$
 V(I) = \{\mathfrak{p}: I\subseteq \mathfrak{p}\}
 $$
-and sections of the form $$\Or_{\mathrm{Spec} R}(U)
+and sections of the form $$\mathcal{O}_{\mathrm{Spec} R}(U)
 = \{(\varphi_\mathfrak{p})_{\mathfrak{p}\in U}: \forall \mathfrak{p}\in U\exists f,g\in R,  \mathfrak{p} \in U_\mathfrak{p}\subseteq U\mathrm{ s.t. }\forall \mathfrak{q}\in U_\mathfrak{p}, f\notin\mathfrak{q}, \varphi_\mathfrak{q}=\frac{g}{f}\in R_\mathfrak{q}\}.
 $$
 <h3>definition</h3>An affine scheme is a ringed space of the form $\mathrm{Spec} R$ with the sheaf we have just defined
@@ -130,23 +130,17 @@ $$
 <br> <br>
 In terms of coordinate rings, writing $K[t]=k[t]\otimes_{K'}K$, this implies that
 $$
-    A_K(X) = K[t]/I_K(X) = (K'[t]\otimes_{K'} K)/(I_{K'}(X_0)\otimes_{K'}K)
-$$
-
-$$
-    =(K'[t]/I_{K'}(X_0))\otimes_{K'} K = A_{K'}(X_0) \otimes_{K'} K
-$$
+\begin{align*}
+    A_K(X) &= K[t]/I_K(X) = (K'[t]\otimes_{K'} K)/(I_{K'}(X_0)\otimes_{K'}K) \\
+    &=(K'[t]/I_{K'}(X_0))\otimes_{K'} K = A_{K'}(X_0) \otimes_{K'} K
+\end{align*}
 where the second last equality stems from the flatness of $K$ as $K'$-module, due to its freedom.
 By doing this we actually do not lose any information, because the converse is also true. Indeed, if we have $A_K(X) = A_{K'}(X_0) \otimes_{K'} K$, then 
-$$
-I_K(X) = \ker\left(K'[t]\otimes_{K'}K\to\frac{K'[t]}{I_{K'}(X_0)}\otimes_{K'}K\right) $$
-
-$$
-= \ker\left(\left( K'[t]\to\frac{K'[t]}{I_{K'}(X_0)}\right)\otimes_{K'}\mathrm{id}_K \right) $$
-
-$$
-=I_{K'(X_0)} \otimes_{K'}K.
-$$
+\begin{align*}
+I_K(X) &= \ker\left(K'[t]\otimes_{K'}K\to\frac{K'[t]}{I_{K'}(X_0)}\otimes_{K'}K\right) \\
+&= \ker\left(\left( K'[t]\to\frac{K'[t]}{I_{K'}(X_0)}\right)\otimes_{K'}\mathrm{id}_K \right) \\
+&=I_{K'(X_0)} \otimes_{K'}K.
+\end{align*}
 Therefore we may as well take that as a definition condition:
 <br> <br>
 Let $K'\to K$ be a finite extension of fields and $X$ be a variety over $K$, then we say that $X$ originates from a variety over $K'$ if there exists a variety $X_0$ over $K'$ such that
@@ -159,7 +153,7 @@ $$  \mathrm{Spec} A_K(X) = \mathrm{Spec} A_{K'}(X_0) \times_{\mathrm{Spec} {K'}}
 $$
 Then we can generalize this to the following definition. 
 <br> <br>
-Let $S$ be a scheme over $K$ (finite?). Then we say that $S$ originates from a scheme over $K'$ if there exists a scheme $T$ over $K'$ such that
+Let $S$ be a scheme over $K$. Then we say that $S$ originates from a scheme over $K'$ if there exists a scheme $T$ over $K'$ such that
 $$
 S=T\times_{\mathrm{Spec} {K'}} \mathrm{Spec} K.
 $$
@@ -173,9 +167,9 @@ In terms of diagrams, this means that there exists a morphism $S\to T$ such that
 <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJTIl0sWzEsMCwiVCJdLFswLDEsIlUiXSxbMSwxLCJVJyJdLFsxLDNdLFswLDJdLFswLDFdLFsyLDNdXQ==&embed" width="200" height="200" style="border-radius: 8px; border: none;"></iframe>
 <br>
     is cocartesian.
-Hence, we will say for example that an elliptic curve $E$ over a field $K$ originates from a scheme over $\Z$ if there exists a scheme $T$ (automatically over $\Z$) such that
+Hence, we will say for example that an elliptic curve $E$ over a field $K$ originates from a scheme over $\mathbb{Z}$ if there exists a scheme $T$ (automatically over $\mathbb{Z}$) such that
 $$
-\mathrm{Spec} K[E] = T\times_{\mathrm{Spec} \Z} \mathrm{Spec} K
+\mathrm{Spec} K[E] = T\times_{\mathrm{Spec} \mathbb{Z}} \mathrm{Spec} K
 $$
 where $K[E]$ is just Silverman's notation for the coordinate ring.
 
