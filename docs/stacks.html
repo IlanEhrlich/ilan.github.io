@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The classical modular polznomial</title>
+
+  <!-- MathJax configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+Many times, fine moduli spaces do not exist. This has to do with automorphisms.
+<br>
+Very roughly, the issue can be presented as the following. Assume we have a fine moduli space $M$ for a moduli problem $F$ with universal object $U$. Imagine there exists a scheme $S$ and an object $X$ over $S$ with a nontrivial automorphism. Then this can lead to the existence of an object $X'$ over $S$ isomorphic to $X$ and different maps $f,f':S\to M$ such that $X=f^*U$, $X'=(f')^*U $. The map $g\mathcal{M}apsto [U\times_gS]$ from remark \ref{universal object} then sends both $f$ and $f'$ to $[X]=[X']$, and then is no longer injective. Therefore $M$ cannot be a fine moduli space. This is explained more rigorously in \cite[2.A]{HarrMorr}. Compare with Zerbes's example
+<br> 
+The absence of non-trivial automorphisms is called rigidity, and under some conditions it is equivalent to being representable. This is explained for example in \cite[Section 4.7]{KatzMazur}
+<br> 
+The idea of moduli stacks is to develop a new structure that can deal with this complexity while conserving the desired properties of fine moduli spaces. In short, we would like to construct an object $\mathcal{M}$ satisfying:
+\begin{enumerate}
+    \item The data of a morphism $S\to \mathcal{M}$ is the same as that of an object over $S$.
+    \item We have a notion of isomorphism between maps $S\to \mathcal{M}$.
+    \item This notion corresponds to isomorphisms between the associated objects over schemes.
+\end{enumerate}
+This would solve our problem, because it would allow us to consider objects and not just their isomorphism classes, in order to be able to distinguish those isomorphic object that correspond to different maps $S\to \mathcal{M}$.
+<br> 
+The second goal already hints at category theory, where we have an established notion of maps between maps. Therefore, we want $\mathcal{M}$ to behave like a category. Yet, this would require to view our schemes $S$ also as categories. Thus assume that we can associate to $S$ a category $\hat{S}$ that embodies it and which we will define later. We may now consider our old morphisms as functors $\hat{S}\to \mathcal{M}$ and we have a notion of maps between them.
+<br> 
+On the other hand, in order to address the first goal, we may say the following: since $\mathcal{M}$ is to be a category, we are free to decide what its objects are. Thus, a natural idea would be first simply to take our objects of interest to be classified, i.e. all objects over all schemes as objects of $\mathcal{M}$. Then, it would be to find a way to force functors $\hat{S}\to \mathcal{M}$ to land in the class of objects over $S$, and to equate a choice amongst them. 
+<br> 
+Hence, consider $\mathcal{M}$ as the category whose objects are all objects over all schemes. In order to be compatible with base changes, we define morphisms in $\mathcal{M}$ as cartesian diagrams. 
+<br> 
+When trying to construct the desired constraint on functors, it is very natural to consider the "projection" $F:\mathcal{M}\to \mathrm{Sch}$ sending an object to its base scheme. Under this functor, the "preimage" $F^{-1}(S)$ of a scheme $S$ is then exactly the objects over it, where the image of any functor $\hat{S}\to \mathcal{M}$ should lie.
+So if a functor $\hat{f}:\hat{S}\to \mathcal{M}$ should land in $F^{-1}(S)$, it means that the composition $F\circ \hat{f}$ should land in $\{S\} \subseteq \mathrm{Sch}$. This is equivalent to saying that the diagram.
+<br>
+
+<!-- https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGhhdHtTfSJdLFsyLDAsIlxcbWF0aGNhbHtNfSJdLFsxLDEsIlxcbWF0aHJte1NjaH0iXSxbMCwxLCJcXGhhdHtmfSJdLFswLDJdLFsxLDIsIkYiXV0= -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGhhdHtTfSJdLFsyLDAsIlxcbWF0aGNhbHtNfSJdLFsxLDEsIlxcbWF0aHJte1NjaH0iXSxbMCwxLCJcXGhhdHtmfSJdLFswLDJdLFsxLDIsIkYiXV0=&embed" width="432" height="304" style="border-radius: 8px; border: none;"></iframe>
+
+<br>
+should commute, where the functor $\hat{S}\to \mathrm{Sch}$ is the constant one sending every object onto $S$. Hence, the commutativity of this diagram is exactly the constraint we require for a functor to be considered a morphism $\hat{S}\to M$.
+
+<br>
+
+Another hint that $F^{-1}(S)$ is of particular use to us is that it provides a description of automorphisms of objects over $S$: they are exactly the fibers of $\mathrm{id}_S$. We then see that the category $F^{-1}(S)$ whose objects are those sent to $S$ and morphisms are those sent to $\mathrm{id}_S$ is a groupoid, a category whose morphisms are all invertible. Thus, we would also like $\hat{S}$ to be a category fibered in groupoids. 
+
+<br>
+
+Let us now address the issue of constructing $\hat{S}$. We would like $S\mapsto \hat{S}$ to be an embedding. Well, there is an embedding that we have previously used for fine moduli spaces in \ref{embedding}, the Yoneda embedding $S\mapsto h^S$. So we would like to do something similar but into categories rather than functors.
+
+<br>
+
+Yet, we have a way to view the Yoneda embedding as a category.
+Let $C$ be a category, which will later be substituted by $\mathrm{Sch}$, and $c_0\in C$ be a fixed object. Remember that the Yoneda embedding is given by $c_0\mapsto (h^{c_0}:c\mapsto \{c\to c_0\})$. The key idea is to see morphisms $c\to c_0$ from a given $c_0$ as objects in a subcategory of the overcategory $C_{c_0}$. Given an overcategory $C_{c_0}$, the set of objects $c\to c_0$ is simply the fiber category of the object $c\in C$ under the domain functor $\Dom_{c_0} :C_{c_0} \to C$, $(c'\to c_0)\mapsto c'$. (In particular, this category is also a groupoid, making $C_{c_0}$ a category fibered in  groupoids. Watch out, is this only true in the case of schemes?) So given an object $c_0$, $h^{c_0}(c)$ can be recovered as the set of objects in the category $\Dom_{c_0}^{-1}(c)$. In turn, the functor $h^{c_0}$ can thus be recovered as $c\mapsto \Dom_{c_0}^{-1}(c)$. This means that all of the data of the functor $h^{c_0}$ is encapsulated in that of $C_{c_0}$. Mathematically, we can describe the situation as follows. The construction is formalized as the functor $\mathrm{CatFibGpd}\to \mathrm{Fun}(C,\Sets)$, $C_{c_0}\mapsto \Dom_{c_0}^{-1}(\cdot)$. We just proved that if we precompose it with the functor
+\begin{align}
+    C &\to \mathrm{CatFibGpd} \label{embedding 2} \\
+    c_0 &\mapsto C_{c_0} \nonumber
+\end{align}
+then we recover the Yoneda embedding $C\to \mathrm{Fun}(C,\Sets)$, $c\mapsto h^c$. Thus, the functor \ref{embedding 2} is also an embedding, which contains at least the data of the Yoneda one. Hence, we simply set $\hat{S}:= \mathrm{Sch}_S$.
+
+<br>
+
+The category $\mathcal{M}$ then "represents" the functor $F$. When endowed with the projection $\mathcal{M}\to \mathrm{Sch}$ it is then what will replace fine moduli spaces.
+
+<br>
+
+However, so far, the construction we have made is purely formal, and does not really say anything about $F$. We did not "solve" the moduli problem, we simply constructed something with the properties we were seeking. The particular phenomenon of representability in the case of fine moduli spaces is then recovered in the case of stacks, not as representability, but as extra conditions, which will define \textit{moduli stacks}.
+  
+</body>
